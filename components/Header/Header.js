@@ -3,6 +3,7 @@ import styles from "./styles.module.css";
 import Link from "next/link";
 import DrawerComponent from "./DrawerComponent";
 import Head from "next/head";
+import { motion } from "framer-motion";
 
 function Header() {
   const [drawer, setDrawer] = useState(false);
@@ -45,28 +46,68 @@ function Header() {
         <meta name="theme-color" content="#317EFB" />
       </Head>
       <Link href="/">
-        <h1 style={{ marginLeft: "1rem", cursor: "pointer" }}>Sahaayak</h1>
+        <motion.h1
+          initial={{ x: -50, opacity: 0 }}
+          whileInView={{ x: 0, opacity: 1 }}
+          transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
+          style={{ marginLeft: "1rem", cursor: "pointer" }}
+        >
+          Sahaayak
+        </motion.h1>
       </Link>
       {!drawer && (
         <div className={styles.links}>
           <div className={styles.buttonElement}></div>
           <Link href="/global" passHref={true}>
-            <p className={styles.link}>Global</p>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              Global
+            </motion.p>
           </Link>
           <Link href="/local" passHref={true}>
-            <p className={styles.link}>Local</p>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              Local
+            </motion.p>
           </Link>
           <Link href="/end-free" passHref={true}>
-            <p className={styles.link}>End-Free</p>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.25, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              End-Free
+            </motion.p>
           </Link>
-          {/* <Link href="/event" passHref={true}>
-            <p className={styles.link}>Event</p>
-          </Link> */}
+
           <Link href="/dna-to-protein" passHref={true}>
-            <p className={styles.link}>DNA to Protein</p>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              DNA to Protein
+            </motion.p>
           </Link>
           <Link href="/orfs" passHref={true}>
-            <p className={styles.link}>ORFs</p>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 1.75, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              ORFs
+            </motion.p>
           </Link>
         </div>
       )}
