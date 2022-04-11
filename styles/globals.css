@@ -22,11 +22,11 @@ body p {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #fff;
+  background: #1a2e39;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #1a2e39;
+  background: #fff;
   border-radius: 20px;
 }

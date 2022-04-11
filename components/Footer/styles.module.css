@@ -1,4 +1,5 @@
 .container {
+  bottom: 0;
   background-color: #1a2e39;
   display: flex;
   flex-direction: column;
@@ -9,7 +10,7 @@
 }
 
 .wrapper {
-  padding-right: 4rem;
+  padding-right: 2rem;
 }
 
 .info {

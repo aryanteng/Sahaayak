@@ -1,0 +1,88 @@
+.container {
+  margin-top: 3rem;
+  border-radius: 1rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: #1a2e39;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container h1 {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.container p {
+  margin-right: 1rem;
+}
+
+.infoBox {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputSeq {
+  display: flex;
+  align-items: center;
+  margin-right: -3rem;
+}
+
+.input {
+  background-color: transparent;
+  border-radius: 5rem;
+  color: #fff;
+  font-size: "Poppins", "sans-serif";
+  border: 1px solid #fff;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  width: 64%;
+}
+
+.smallInput {
+  background-color: transparent;
+  border-radius: 5rem;
+  color: #fff;
+  font-size: "Poppins", "sans-serif";
+  border: 1px solid #fff;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  width: 25%;
+}
+
+.penalties {
+  display: flex;
+  align-items: center;
+}
+
+.btn {
+  padding: 0.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #fff;
+  border-radius: 4rem;
+  width: fit-content;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.btn:hover {
+  background-color: #fff;
+  color: #1a2e39;
+  cursor: pointer;
+  transition: all 0.3s;
+}
