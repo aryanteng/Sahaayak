@@ -28,4 +28,5 @@ body p {
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #1a2e39;
+  border-radius: 20px;
 }
