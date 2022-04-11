@@ -1,0 +1,21 @@
+.container {
+  height: 8vh;
+  background-color: #1a2e39;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.headerLinks {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 1rem;
+}
+
+.headerLinks p {
+  margin-left: 2rem;
+}
