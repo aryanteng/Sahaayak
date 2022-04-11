@@ -44,7 +44,9 @@ function Header() {
         <link rel="apple-touch-icon" href="/icons/icon-32x32.png"></link>
         <meta name="theme-color" content="#317EFB" />
       </Head>
-      <h1 style={{ marginLeft: "1rem" }}>Sahaayak</h1>
+      <Link href="/">
+        <h1 style={{ marginLeft: "1rem", cursor: "pointer" }}>Sahaayak</h1>
+      </Link>
       {!drawer && (
         <div className={styles.links}>
           <div className={styles.buttonElement}></div>
