@@ -6,7 +6,7 @@ function InfoComponent({ heading, desc, link }) {
   return (
     <div className={styles.wrapper}>
       <h1>{heading}</h1>
-      <p>{desc}</p>
+      <p dangerouslySetInnerHTML={{ __html: desc }}></p>
       <Link href={link} passHref={true}>
         <div className={styles.btn}>Start</div>
       </Link>
