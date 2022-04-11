@@ -50,7 +50,7 @@ function Header() {
       {!drawer && (
         <div className={styles.links}>
           <div className={styles.buttonElement}></div>
-          <Link href="/" passHref={true}>
+          <Link href="/global" passHref={true}>
             <p className={styles.link}>Global</p>
           </Link>
           <Link href="/local" passHref={true}>

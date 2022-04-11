@@ -20,7 +20,20 @@
   align-items: center;
 }
 
-.info p:hover {
+.link {
+  margin-right: 0rem;
+  font-size: 1.1rem;
+  padding: 0.5rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  border-radius: 10px;
+  font-weight: 600;
+}
+
+.link:hover {
+  background-color: #fff;
+  color: #1a2e39;
   cursor: pointer;
-  text-decoration: underline 1px #fff;
+  border-radius: 10px;
+  transition: all 0.3s;
 }

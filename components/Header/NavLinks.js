@@ -9,7 +9,7 @@ function NavLinks() {
   return (
     // user?(
     <List>
-      <Link href="/" style={{ textDecoration: "none" }}>
+      <Link href="/global" style={{ textDecoration: "none" }}>
         <ListItem className={styles.mobileLink}>
           <ListItemText primary="Global" />
         </ListItem>
