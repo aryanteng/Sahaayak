@@ -37,3 +37,25 @@
   border-radius: 10px;
   transition: all 0.3s;
 }
+
+@media (max-width: 700px) {
+  .info {
+    flex-direction: column;
+  }
+
+  .container h1 {
+    font-size: 1.5rem;
+    margin-bottom: 0;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

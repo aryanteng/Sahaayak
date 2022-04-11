@@ -86,3 +86,25 @@
   cursor: pointer;
   transition: all 0.3s;
 }
+
+@media (max-width: 700px) {
+  .container h1 {
+    font-weight: normal;
+    font-size: 1rem;
+  }
+
+  .container p {
+    margin-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .img {
+    width: 100px;
+  }
+
+  .btn {
+    padding: 0.5rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}

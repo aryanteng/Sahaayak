@@ -11,7 +11,7 @@ function InputAlignment() {
           <input className={styles.input}></input>
         </div>
         <div className={styles.inputSeq}>
-          <p>Sequence 1</p>
+          <p>Sequence 2</p>
           <input className={styles.input}></input>
         </div>
         <div className={styles.penalties}>
@@ -30,7 +30,7 @@ function InputAlignment() {
         </div>
         <div className={styles.btn}>Submit</div>
       </div>
-      <img src="assets/Flask.svg" width="150"></img>
+      <img className={styles.img} src="assets/Flask.svg" width="150"></img>
     </div>
   );
 }

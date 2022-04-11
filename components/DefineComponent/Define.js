@@ -14,7 +14,7 @@ function Define({ topic, definition, link }) {
           </a>
         </div>
       </div>
-      <img src="assets/Dna.svg" width="150"></img>
+      <img className={styles.img} src="assets/Dna.svg" width="150"></img>
     </div>
   );
 }

@@ -10,8 +10,7 @@ function Footer() {
       <div className={styles.wrapper}>
         <div className={styles.info}>
           <h1>Sahaayak</h1>
-
-          <Link href="about-us" passHref={true}>
+          <Link href="/about-us" passHref={true}>
             <p className={styles.link}>About Us</p>
           </Link>
         </div>

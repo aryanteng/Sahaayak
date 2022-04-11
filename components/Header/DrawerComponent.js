@@ -57,7 +57,10 @@ export default function DrawerComponent() {
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
           <Button onClick={toggleDrawer(anchor, true)}>
-            <MenuIcon fontSize="large" style={{ color: "#fff" }} />
+            <MenuIcon
+              fontSize="large"
+              style={{ color: "#fff", fontSize: "1.5rem", marginTop: "0.8rem" }}
+            />
           </Button>
           <Drawer
             anchor={anchor}

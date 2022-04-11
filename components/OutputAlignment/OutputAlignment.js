@@ -19,7 +19,7 @@ function OutputAlignment() {
           </div>
         </div>
       </div>
-      <img src="assets/Output.svg" width="150"></img>
+      <img className={styles.img} src="assets/Output.svg" width="150"></img>
     </div>
   );
 }
