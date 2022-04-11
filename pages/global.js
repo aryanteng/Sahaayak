@@ -7,7 +7,7 @@ export default function Global() {
   return (
     <div className={styles.container}>
       <Header />
-      <Define />
+      {/* <Define /> */}
       <Footer />
     </div>
   );

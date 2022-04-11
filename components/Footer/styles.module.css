@@ -7,17 +7,17 @@
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
+}
+
+.wrapper {
+  padding-right: 4rem;
 }
 
 .info {
   display: flex;
-  margin: 1rem;
+  margin-left: 1rem;
   justify-content: space-between;
   align-items: center;
-  padding-right: 1rem;
-  margin-left: 0rem;
 }
 
 .info p:hover {
