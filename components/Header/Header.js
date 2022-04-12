@@ -28,7 +28,7 @@ function Header() {
         <meta name="description" content="Description" />
         <meta name="keywords" content="Keywords" />
         <title>Sahaayak</title>
-
+        <link rel="icon" type="image/x-icon" href="assets/Dna.svg" />
         <link rel="manifest" href="/manifest.json" />
         <link
           href="/icons/icon-16x16.png"
