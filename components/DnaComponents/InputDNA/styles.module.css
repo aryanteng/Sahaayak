@@ -26,6 +26,7 @@
 .infoBox {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .inputSeq {
@@ -36,7 +37,7 @@
 
 .input {
   background-color: transparent;
-  border-radius: 5rem;
+  border-radius: 1rem;
   color: #fff;
   font-size: "Poppins", "sans-serif";
   border: 1px solid #fff;
@@ -44,11 +45,11 @@
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  width: 64%;
-}
-
-.input:focus {
-  outline: none;
+  width: 95%;
+  height: 8rem;
+  overflow-y: auto;
+  font-size: 16px;
+  resize: none;
 }
 
 .smallInput {
@@ -69,12 +70,16 @@
   align-items: center;
 }
 
+.input:focus {
+  outline: none;
+}
+
 .btn {
   padding: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 2rem;
   margin-bottom: 1rem;
   border: 1px solid #fff;
   border-radius: 4rem;
@@ -108,12 +113,13 @@
   }
 
   .btn {
+    margin-top: 1rem;
     padding: 0.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
   .input {
-    width: 50%;
+    width: 90%;
   }
 }
