@@ -25,25 +25,52 @@ function Header() {
           name="viewport"
           content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <meta name="description" content="Description" />
-        <meta name="keywords" content="Keywords" />
+
         <title>Sahaayak</title>
         <link rel="icon" type="image/x-icon" href="assets/Dna.svg" />
         <link rel="manifest" href="/manifest.json" />
-        <link
-          href="/icons/icon-16x16.png"
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
+        <meta
+          name="description"
+          content="A 2022 Web App for all of your Practical Biology needs."
         />
-        <link
-          href="/icons/icon-32x32.png"
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+          name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
         />
-        <link rel="apple-touch-icon" href="/icons/icon-32x32.png"></link>
-        <meta name="theme-color" content="#317EFB" />
+        <link rel="canonical" href="https://sahaayak.vercel.app/" />
+        <meta
+          name="keywords"
+          content="Sahaayak , Practical Bioinformatics , DNA, ORFs, Convert DNA to Protein, Sequence Alignment, Alignment of DNA, Global Alignment, Local Alignment"
+        />
+        <meta name="author" content="Sahaayak" />
+
+        <meta name="twitter:card" content="assets/Dna.svg" />
+        <meta name="twitter:site" content="https://sahaayak.vercel.app/" />
+        <meta name="twitter:title" content="Sahaayak" />
+        <meta
+          name="twitter:description"
+          content="A 2022 Web App for all of your Practical Biology needs."
+        />
+        <meta name="twitter:image:src" content="assets/Dna.svg" />
+        <meta name="twitter:image:alt" content="Sahaayak" />
+
+        <meta property="og:url" content="https://sahaayak.vercel.app/" />
+        <meta property="og:type" content="Biology" />
+        <meta property="og:title" content="Sahaayak" />
+        <meta property="og:image" content="assets/Dna.svg" />
+        <meta
+          property="og:description"
+          content="A 2022 Web App for all of your Practical Biology needs."
+        />
+        <meta property="og:site_name" content="Sahaayak" />
+
+        <meta itemprop="name" content="Sahaayak" />
+        <meta
+          itemprop="description"
+          content="A 2022 Web App for all of your Practical Biology needs."
+        />
+        <meta itemprop="image" content="assets/Dna.svg" />
       </Head>
       <Link href="/">
         <motion.h1
