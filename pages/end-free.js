@@ -11,12 +11,14 @@ export default function EndFree() {
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   return (
-    <div className={styles.container}>
+    <>
       <Header />
-      <Define topic={topic} definition={definition} link={link} />
-      <InputAlignment />
-      <OutputAlignment />
+      <div className={styles.container}>
+        <Define topic={topic} definition={definition} link={link} />
+        <InputAlignment />
+        <OutputAlignment />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

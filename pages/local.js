@@ -11,12 +11,14 @@ export default function Local() {
     "Sequences which are suspected to have similarity or even dissimilar sequences can be compared with local alignment method. It finds local regions with high level of similarity.These two methods of alignments are defined by different algorithms, which use scoring matrices to align the two different series of characters or patterns (sequences). The two different alignment methods are mostly defined by Dynamic programming approach for  aligning two different sequences.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1433&cnt=1";
   return (
-    <div className={styles.container}>
+    <>
       <Header />
-      <Define topic={topic} definition={definition} link={link} />
-      <InputAlignment />
-      <OutputAlignment />
+      <div className={styles.container}>
+        <Define topic={topic} definition={definition} link={link} />
+        <InputAlignment />
+        <OutputAlignment />
+      </div>
       <Footer />
-    </div>
+    </>
   );
 }

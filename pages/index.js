@@ -35,19 +35,21 @@ export default function Home() {
     },
   ];
   return (
-    <div className={styles.container}>
+    <>
       <Header />
-      <div className={styles.infoWrapper}>
-        {list.map((item, index) => (
-          <InfoComponent
-            key={index}
-            heading={item.heading}
-            desc={item.desc}
-            link={item.link}
-          />
-        ))}
+      <div className={styles.container}>
+        <div className={styles.infoWrapper}>
+          {list.map((item, index) => (
+            <InfoComponent
+              key={index}
+              heading={item.heading}
+              desc={item.desc}
+              link={item.link}
+            />
+          ))}
+        </div>
       </div>
       <Footer />
-    </div>
+    </>
   );
 }
