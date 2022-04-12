@@ -100,11 +100,16 @@
 
   .img {
     width: 100px;
+    display: none;
   }
 
   .btn {
     padding: 0.5rem;
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+
+  .input {
+    width: 50%;
   }
 }
