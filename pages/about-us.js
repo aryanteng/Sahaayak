@@ -1,8 +1,5 @@
-import Define from "../components/DefineComponent/Define";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
-import InputAlignment from "../components/InputAlignment/InputAlignment";
-import OutputAlignment from "../components/OutputAlignment/OutputAlignment";
 import styles from "../styles/Global.module.css";
 
 export default function AboutUs() {
