@@ -1,5 +1,5 @@
 .wrapper {
-  background-color: #1a2e39;
+  background-color: var(--theme);
   color: #fff;
   width: 90%;
   display: block;
@@ -36,7 +36,7 @@
 
 .btn:hover {
   background-color: #fff;
-  color: #1a2e39;
+  color: var(--theme);
   cursor: pointer;
   transition: all 0.3s;
 }

@@ -1,6 +1,6 @@
 .container {
   bottom: 0;
-  background-color: #1a2e39;
+  background-color: var(--theme);
   display: flex;
   flex-direction: column;
   width: 100%;
@@ -32,7 +32,7 @@
 
 .link:hover {
   background-color: #fff;
-  color: #1a2e39;
+  color: var(--theme);
   cursor: pointer;
   border-radius: 10px;
   transition: all 0.3s;

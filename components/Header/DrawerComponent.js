@@ -9,14 +9,14 @@ import NavLinks from "./NavLinks";
 const useStyles = makeStyles({
   list: {
     width: 300,
-    backgroundColor: "#1a2e39",
+    backgroundColor: "var(--theme)",
     color: "#fff",
     height: "100%",
     fontWeight: "500 !important",
   },
   fullList: {
     width: "auto",
-    backgroundColor: "#1a2e39",
+    backgroundColor: "var(--theme)",
     color: "#fff",
     fontWeight: "500 !important",
   },

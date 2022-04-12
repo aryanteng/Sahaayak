@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
+:root {
+  --theme: #1a2e39;
+  --white: #ffffff;
+}
+
 html,
 body {
   padding: 0;
@@ -22,11 +27,13 @@ body p {
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #1a2e39;
+  background: var(--theme);
+  margin-top: 0;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #fff;
+  border: 3px solid var(--theme);
   border-radius: 20px;
 }
