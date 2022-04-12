@@ -64,6 +64,10 @@
   width: 25%;
 }
 
+.smallInput:focus {
+  outline: none;
+}
+
 .penalties {
   display: flex;
   align-items: center;
