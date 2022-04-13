@@ -31,7 +31,7 @@ function Header() {
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
-          content="A 2022 Web App for all of your Practical Biology needs."
+          content="A 2022 Web App for all of your Bioinformatics needs."
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -41,7 +41,7 @@ function Header() {
         <link rel="canonical" href="https://sahaayak.vercel.app/" />
         <meta
           name="keywords"
-          content="Sahaayak , Practical Bioinformatics , DNA, ORFs, Convert DNA to Protein, Sequence Alignment, Alignment of DNA, Global Alignment, Local Alignment"
+          content="Sahaayak, Practical Bioinformatics, DNA, ORFs, Convert DNA to Protein, Sequence Alignment, Alignment of DNA, Global Alignment, Local Alignment"
         />
         <meta name="author" content="Sahaayak" />
 
@@ -50,7 +50,7 @@ function Header() {
         <meta name="twitter:title" content="Sahaayak" />
         <meta
           name="twitter:description"
-          content="A 2022 Web App for all of your Practical Biology needs."
+          content="A 2022 Web App for all of your Bioinformatics needs."
         />
         <meta name="twitter:image:src" content="assets/Dna.svg" />
         <meta name="twitter:image:alt" content="Sahaayak" />
@@ -61,14 +61,14 @@ function Header() {
         <meta property="og:image" content="assets/Dna.svg" />
         <meta
           property="og:description"
-          content="A 2022 Web App for all of your Practical Biology needs."
+          content="A 2022 Web App for all of your Bioinformatics needs."
         />
         <meta property="og:site_name" content="Sahaayak" />
 
         <meta itemProp="name" content="Sahaayak" />
         <meta
           itemProp="description"
-          content="A 2022 Web App for all of your Practical Biology needs."
+          content="A 2022 Web App for all of your Bioinformatics needs."
         />
         <meta itemProp="image" content="assets/Dna.svg" />
       </Head>
