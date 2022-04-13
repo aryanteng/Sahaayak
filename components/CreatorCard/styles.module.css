@@ -1,0 +1,13 @@
+.container {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  justify-content: flex-start;
+  border-radius: 1rem;
+  padding: 1rem;
+}
+
+.container p {
+  margin-left: 1rem;
+  font-size: 1.1rem;
+}

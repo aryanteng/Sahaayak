@@ -1,3 +1,31 @@
 .infoWrapper {
   margin-top: 8rem;
 }
+
+.container {
+  margin-top: 7rem;
+  border-radius: 1rem;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  background-color: var(--theme);
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+.container h1 {
+  font-weight: normal;
+  font-size: 1.5rem;
+}
+
+.container h3 {
+  color: #fff;
+  font-weight: lighter;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
