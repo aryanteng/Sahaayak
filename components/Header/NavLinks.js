@@ -9,6 +9,12 @@ function NavLinks() {
   return (
     // user?(
     <List>
+      <Link href="/" style={{ textDecoration: "none" }}>
+        <ListItem className={styles.mobileLink}>
+          <ListItemText primary="Home" />
+        </ListItem>
+      </Link>
+
       <Link href="/global" style={{ textDecoration: "none" }}>
         <ListItem className={styles.mobileLink}>
           <ListItemText primary="Global" />

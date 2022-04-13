@@ -85,6 +85,16 @@ function Header() {
       {!drawer && (
         <div className={styles.links}>
           <div className={styles.buttonElement}></div>
+          <Link href="/" passHref={true}>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.25, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              Home
+            </motion.p>
+          </Link>
           <Link href="/global" passHref={true}>
             <motion.p
               initial={{ x: 50, opacity: 0 }}
