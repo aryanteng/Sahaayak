@@ -2,8 +2,8 @@
   margin-top: 8rem;
 }
 
-.container {
-  margin-top: 7rem;
+.AboutContainer {
+  margin-top: 8rem;
   border-radius: 1rem;
   width: 90%;
   margin-left: auto;
@@ -18,12 +18,12 @@
   align-items: left;
 }
 
-.container h1 {
+.AboutContainer h1 {
   font-weight: normal;
   font-size: 1.5rem;
 }
 
-.container h3 {
+.AboutContainer h3 {
   color: #fff;
   font-weight: lighter;
   margin-bottom: 1rem;

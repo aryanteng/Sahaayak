@@ -12,7 +12,7 @@ export default function AboutUs() {
     },
     {
       id: 2,
-      imgSrc: "assets/DPs/Avi.svg",
+      imgSrc: "https://i.ibb.co/Bswp8RS/avi.jpg",
       name: "Avi Vashishta",
     },
     {
@@ -34,7 +34,7 @@ export default function AboutUs() {
   return (
     <>
       <Header />
-      <div className={styles.container}>
+      <div className={styles.AboutContainer}>
         <h1>About The Project</h1>
         <h3>
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -46,7 +46,7 @@ export default function AboutUs() {
           culpa qui officia deserunt mollit anim id est laborum."
         </h3>
       </div>
-      <div className={styles.container}>
+      <div className={styles.AboutContainer} style={{ marginTop: "2rem" }}>
         <h1>The Creators</h1>
         {creatorArray.map((item) => {
           return (
