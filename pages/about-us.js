@@ -9,26 +9,31 @@ export default function AboutUs() {
       id: 1,
       imgSrc: "assets/DPs/Aryan.svg",
       name: "Aryan Teng",
+      email: "aryan20499@iiitd.ac.in",
     },
     {
       id: 2,
       imgSrc: "https://i.ibb.co/Bswp8RS/avi.jpg",
       name: "Avi Vashishta",
+      email: "avi20500@iiitd.ac.in",
     },
     {
       id: 3,
       imgSrc: "assets/DPs/Mohit.svg",
       name: "Mohit Bansal",
+      email: "mohit20526@iiitd.ac.in",
     },
     {
       id: 4,
-      imgSrc: "assets/DPs/Aryan.svg",
+      imgSrc: "assets/DPs/Nikhil.svg",
       name: "Nikhil Gupta",
+      email: "nikhil20530@iiitd.ac.in",
     },
     {
       id: 5,
       imgSrc: "assets/DPs/Vishesh.svg",
       name: "Vishesh Jain",
+      email: "vishesh20550@iiitd.ac.in",
     },
   ];
   return (
@@ -50,7 +55,12 @@ export default function AboutUs() {
         <h1>The Creators</h1>
         {creatorArray.map((item) => {
           return (
-            <CreatorCard key={item.id} imgSrc={item.imgSrc} name={item.name} />
+            <CreatorCard
+              key={item.id}
+              imgSrc={item.imgSrc}
+              name={item.name}
+              email={item.email}
+            />
           );
         })}
       </div>

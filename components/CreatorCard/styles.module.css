@@ -10,4 +10,17 @@
 .container p {
   margin-left: 1rem;
   font-size: 1.1rem;
+  text-decoration: none;
+}
+
+.mail {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-size: ".9rem";
+  margin-top: "-.8rem";
+}
+
+.mail:hover {
+  text-decoration: 1px underline #fff;
 }
