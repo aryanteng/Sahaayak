@@ -65,12 +65,12 @@ function Header() {
         />
         <meta property="og:site_name" content="Sahaayak" />
 
-        <meta itemprop="name" content="Sahaayak" />
+        <meta itemProp="name" content="Sahaayak" />
         <meta
-          itemprop="description"
+          itemProp="description"
           content="A 2022 Web App for all of your Practical Biology needs."
         />
-        <meta itemprop="image" content="assets/Dna.svg" />
+        <meta itemProp="image" content="assets/Dna.svg" />
       </Head>
       <Link href="/">
         <motion.h1
