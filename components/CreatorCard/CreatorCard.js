@@ -19,7 +19,7 @@ function CreatorCard({ imgSrc, name, email }) {
             className={styles.mail}
             style={{ fontSize: ".9rem", marginTop: "-.8rem" }}
           >
-            <MailOutlineIcon sx={{ marginRight: "5px" }} />
+            <MailOutlineIcon sx={{ marginRight: "5px", fontSize: "1rem" }} />
             {email}
           </p>
         </a>
