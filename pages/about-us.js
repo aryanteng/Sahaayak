@@ -7,7 +7,7 @@ export default function AboutUs() {
   const creatorArray = [
     {
       id: 1,
-      imgSrc: "assets/DPs/Aryan.svg",
+      imgSrc: "https://i.ibb.co/myvq6GR/aryan.jpg",
       name: "Aryan Teng",
       email: "aryan20499@iiitd.ac.in",
     },
@@ -19,19 +19,19 @@ export default function AboutUs() {
     },
     {
       id: 3,
-      imgSrc: "assets/DPs/Mohit.svg",
+      imgSrc: "https://i.ibb.co/zsxFccd/mohit.jpg",
       name: "Mohit Bansal",
       email: "mohit20526@iiitd.ac.in",
     },
     {
       id: 4,
-      imgSrc: "assets/DPs/Nikhil.svg",
+      imgSrc: "https://i.ibb.co/ZzX7hxD/nik.jpg",
       name: "Nikhil Gupta",
       email: "nikhil20530@iiitd.ac.in",
     },
     {
       id: 5,
-      imgSrc: "assets/DPs/Vishesh.svg",
+      imgSrc: "https://i.ibb.co/4NXnCf2/vishesh.jpg",
       name: "Vishesh Jain",
       email: "vishesh20550@iiitd.ac.in",
     },
