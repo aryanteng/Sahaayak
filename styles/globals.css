@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 :root {
-  --theme: #1a2e39;
-  --white: #ffffff;
+  /* --theme: #1a2e39; */
+  --theme: #b9fa3d;
+  --white: #000;
 }
+
+/* body,
+body[data-theme="dark"] {
+  --theme: #b9fa3d;
+  --white: #000;
+} */
 
 html,
 body {
@@ -12,11 +19,16 @@ body {
   font-family: "Poppins", sans-serif;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  background-color: var(--white);
+}
+
+::selection {
+  color: var(--theme);
 }
 
 body h1,
 body p {
-  color: #fff;
+  color: var(--white);
 }
 
 /* width */
@@ -33,7 +45,7 @@ body p {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #fff;
+  background: var(--white);
   border: 3px solid var(--theme);
   border-radius: 20px;
 }

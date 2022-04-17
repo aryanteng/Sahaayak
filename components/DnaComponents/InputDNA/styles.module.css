@@ -38,9 +38,9 @@
 .input {
   background-color: transparent;
   border-radius: 1rem;
-  color: #fff;
+  color: var(--white);
   font-size: "Poppins", "sans-serif";
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -55,9 +55,9 @@
 .smallInput {
   background-color: transparent;
   border-radius: 5rem;
-  color: #fff;
+  color: var(--white);
   font-size: "Poppins", "sans-serif";
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.25rem;
@@ -81,16 +81,16 @@
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  border: 1px solid #fff;
+  border: 1px solid var(--white);
   border-radius: 4rem;
   width: fit-content;
   font-size: 0.8rem;
   font-weight: 600;
-  color: #fff;
+  color: var(--white);
 }
 
 .btn:hover {
-  background-color: #fff;
+  background-color: var(--white);
   color: var(--theme);
   cursor: pointer;
   transition: all 0.3s;

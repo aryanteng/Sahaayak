@@ -8,7 +8,8 @@
   padding-right: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-  background-color: var(--theme);
+  background-color: var(--white);
+  border: 1px solid var(--theme);
   display: flex;
   align-items: center;
 }
@@ -16,6 +17,11 @@
 .container h1 {
   font-weight: normal;
   font-size: 1.5rem;
+  color: var(--theme);
+}
+
+.container p {
+  color: #fff;
 }
 
 .container h3 {
@@ -36,7 +42,11 @@
 }
 
 .infoBox a:hover {
-  text-decoration: underline 1px #fff;
+  text-decoration: underline 1px var(--theme);
+}
+
+.img {
+  color: var(--theme);
 }
 
 @media (max-width: 700px) {

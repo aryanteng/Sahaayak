@@ -31,7 +31,7 @@
 }
 
 .link:hover {
-  background-color: #fff;
+  background-color: var(--white);
   color: var(--theme);
   cursor: pointer;
   border-radius: 10px;

@@ -7,11 +7,11 @@ function InputAlignment() {
       <div className={styles.infoBox}>
         <h1>Input</h1>
         <div className={styles.inputSeq}>
-          <p>Sequence 1</p>
+          <p>Sequence A</p>
           <input className={styles.input}></input>
         </div>
         <div className={styles.inputSeq}>
-          <p>Sequence 2</p>
+          <p>Sequence B</p>
           <input className={styles.input}></input>
         </div>
         <div className={styles.penalties}>

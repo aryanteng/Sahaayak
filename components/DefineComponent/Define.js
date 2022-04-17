@@ -10,7 +10,7 @@ function Define({ topic, definition, link }) {
         <div className={styles.infoBox}>
           <p>Wish to learn more?</p>
           <a href={link}>
-            <p>Click Here</p>
+            <p style={{ color: "var(--theme)" }}>Click Here</p>
           </a>
         </div>
       </div>

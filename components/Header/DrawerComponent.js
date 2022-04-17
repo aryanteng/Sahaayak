@@ -10,14 +10,14 @@ const useStyles = makeStyles({
   list: {
     width: 300,
     backgroundColor: "var(--theme)",
-    color: "#fff",
+    color: "var(--white)",
     height: "100%",
     fontWeight: "500 !important",
   },
   fullList: {
     width: "auto",
     backgroundColor: "var(--theme)",
-    color: "#fff",
+    color: "var(--white)",
     fontWeight: "500 !important",
   },
 });
@@ -59,7 +59,11 @@ export default function DrawerComponent() {
           <Button onClick={toggleDrawer(anchor, true)}>
             <MenuIcon
               fontSize="large"
-              style={{ color: "#fff", fontSize: "1.5rem", marginTop: "0.8rem" }}
+              style={{
+                color: "var(--white)",
+                fontSize: "1.5rem",
+                marginTop: "0.8rem",
+              }}
             />
           </Button>
           <Drawer
