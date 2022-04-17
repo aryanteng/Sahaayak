@@ -10,39 +10,26 @@ function NavLinks() {
     // user?(
     <List>
       <Link href="/" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="Home" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>Home</ListItem>
       </Link>
 
       <Link href="/global" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="Global" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>Global</ListItem>
       </Link>
 
       <Link href="/local" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="Local" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>Local</ListItem>
       </Link>
 
       <Link href="/end-free" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="End-Free" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>End-Free</ListItem>
       </Link>
       <Link href="/dna-to-protein" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="DNA to Protein" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>DNA to Protein</ListItem>
       </Link>
       <Link href="/orfs" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>
-          <ListItemText primary="ORFs" />
-        </ListItem>
+        <ListItem className={styles.mobileLink}>ORFs</ListItem>
       </Link>
-      <hr style={{ color: "#636262", width: "90%", opacity: 0.2 }} />
     </List>
   );
 }

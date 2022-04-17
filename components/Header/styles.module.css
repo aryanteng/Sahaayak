@@ -46,13 +46,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-}
-
-.mobileLink:hover {
-  background-color: var(--theme);
-  color: var(--white);
-  cursor: pointer;
-  transition: all 0.3s;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .profileButton {
