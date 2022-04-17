@@ -1,3 +1,7 @@
+.container {
+  margin-top: 8rem;
+}
+
 @media (max-width: 700px) {
   .container {
     padding: 0.5rem;

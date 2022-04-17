@@ -24,6 +24,7 @@ body {
 
 ::selection {
   color: var(--theme);
+  background-color: var(--white);
 }
 
 body h1,
