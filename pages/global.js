@@ -11,7 +11,18 @@ export default function Global() {
   const definition =
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
+  const [seqA, setSeqA] = useState("");
+  const [seqB, setSeqB] = useState("");
+  const [gap, setGap] = useState("");
+  const [match, setMatch] = useState("");
+  const [misMatch, setMisMatch] = useState("");
 
+  const submit = () => {
+    console.log("seqA", seqA);
+    console.log("seqB", seqB);
+    console.log("gap", gap);
+    console.log("match", match);
+  };
   return (
     <>
       <Header />
