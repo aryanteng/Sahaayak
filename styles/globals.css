@@ -50,3 +50,10 @@ body p {
   border: 3px solid var(--theme);
   border-radius: 20px;
 }
+
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+}
