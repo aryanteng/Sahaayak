@@ -9,7 +9,9 @@ function Footer() {
     <div className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.info}>
-          <h1>Sahaayak</h1>
+          <Link href="/">
+            <h1 style={{ cursor: "pointer" }}>Sahaayak</h1>
+          </Link>
           <Link href="/about-us" passHref={true}>
             <p className={styles.link}>About Us</p>
           </Link>
