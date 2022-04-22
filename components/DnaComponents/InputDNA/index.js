@@ -1,13 +1,26 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-function InputDNA() {
+function InputDNA({ seq, setSeq, submit }) {
   return (
     <div className={styles.container}>
       <div className={styles.infoBox}>
         <h1>Input</h1>
-        <textarea className={styles.input} />
-        <div className={styles.btn}>Submit</div>
+        <textarea
+          value={seq}
+          onChange={(e) => {
+            setSeq(e.target.value);
+          }}
+          className={styles.input}
+        />
+        <div
+          className={styles.btn}
+          onClick={() => {
+            submit();
+          }}
+        >
+          Submit
+        </div>
       </div>
       <img className={styles.img} src="assets/Flask.svg" width="150"></img>
     </div>
