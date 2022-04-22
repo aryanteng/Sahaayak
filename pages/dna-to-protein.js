@@ -4,6 +4,7 @@ import InputDNA from "../components/DnaComponents/InputDNA";
 import OutputDNA from "../components/DnaComponents/InputDNA/OutputDNA";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import getProtein from "../functions/protein";
 import styles from "../styles/Global.module.css";
 
 export default function DNA_To_Protein() {
@@ -16,6 +17,8 @@ export default function DNA_To_Protein() {
 
   const submit = () => {
     console.log("seq", seq);
+    var ans = getProtein(seq);
+    console.log("ans", ans);
   };
 
   return (
