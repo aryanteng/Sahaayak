@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Define from "../components/DefineComponent/Define";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
@@ -11,12 +12,40 @@ export default function Global() {
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
 
+<<<<<<< HEAD
+=======
+  const [seqA, setSeqA] = useState("");
+  const [seqB, setSeqB] = useState("");
+  const [gap, setGap] = useState("");
+  const [match, setMatch] = useState("");
+  const [misMatch, setMisMatch] = useState("");
+
+  const submit = () => {
+    console.log("seqA", seqA);
+    console.log("seqB", seqB);
+    console.log("gap", gap);
+    console.log("match", match);
+  };
+
+>>>>>>> 0e26b089b1d03f480a94dd5c0118ef38a931e36a
   return (
     <>
       <Header />
       <div className={styles.container}>
         <Define topic={topic} definition={definition} link={link} />
-        <InputAlignment />
+        <InputAlignment
+          seqA={seqA}
+          setSeqA={setSeqA}
+          seqB={seqB}
+          setSeqB={setSeqB}
+          match={match}
+          setMatch={setMatch}
+          misMatch={misMatch}
+          setMisMatch={setMisMatch}
+          gap={gap}
+          setGap={setGap}
+          submit={submit}
+        />
         <OutputAlignment />
       </div>
       <Footer />
