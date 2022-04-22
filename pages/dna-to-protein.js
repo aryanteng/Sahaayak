@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Define from "../components/DefineComponent/Define";
 import InputDNA from "../components/DnaComponents/InputDNA";
 import OutputDNA from "../components/DnaComponents/InputDNA/OutputDNA";
