@@ -20,12 +20,12 @@ function OutputAlignment({ matrix, original, optimal }) {
           <div className={styles.box}>
             <p style={{ marginLeft: "1rem" }}>Optimal Alignments</p>
             {original ? (
-              original.map((item) => {
+              original.map((item, index) => {
                 return (
                   <div className={styles.alignments}>
                     {item}
                     <br></br>
-                    {optimal}
+                    {optimal[index]}
                   </div>
                 );
               })
