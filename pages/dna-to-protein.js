@@ -11,11 +11,11 @@ export default function DNA_To_Protein() {
   const definition =
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
-
   const [seq, setSeq] = useState("");
+  const [output, setOutput] = useState("");
 
   const submit = () => {
-    console.log("ans", ans);
+    setOutput(seq);
   };
 
   return (
@@ -23,8 +23,14 @@ export default function DNA_To_Protein() {
       <Header />
       <div className={styles.container}>
         <Define topic={topic} definition={definition} link={link} />
-        <InputDNA seq={seq} setSeq={setSeq} submit={submit} />
-        <OutputDNA />
+        <InputDNA
+          seq={seq}
+          setSeq={setSeq}
+          submit={submit}
+          output={output}
+          setOutput={setOutput}
+        />
+        {output.length > 0 && <OutputDNA output={output} />}
       </div>
       <Footer />
     </>

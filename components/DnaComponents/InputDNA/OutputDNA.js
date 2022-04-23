@@ -1,10 +1,10 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-function OutputDNA({ isOrf }) {
+function OutputDNA({ isOrf, output, setOutput }) {
   const downloadTxtFile = () => {
     const element = document.createElement("a");
-    const file = new Blob(["hello world"], {
+    const file = new Blob([output], {
       type: "text/plain",
     });
     element.href = URL.createObjectURL(file);
@@ -17,7 +17,7 @@ function OutputDNA({ isOrf }) {
     <div className={styles.container}>
       <div className={styles.infoBox}>
         <h1>Output</h1>
-        <textarea disabled className={styles.input} />
+        <textarea disabled className={styles.input} value={output} />
         <div
           className={styles.btn}
           onClick={() => {
