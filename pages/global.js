@@ -9,41 +9,35 @@ import styles from "../styles/Global.module.css";
 export default function Global() {
   const [data, setData] = useState([{}]);
 
-  // const getData = async () => {
-  //   const response = await fetch("http://localhost:5000/members", {
-  //     method: "GET",
-  //     headers: {
-  //       accept: "application/json",
-  //     },
-  //   });
+  const getData = async () => {
+    // const response = await fetch("https://localhost:5000/members")
+    //   .then((res) => {
+    //     if (res.ok) {
+    //       console.log("Works");
+    //     }
+    //     console.log(res.json());
+    //     // res.json())
+    //   })
+    //   .then((data) => {
+    //     setData(data);
+    //     console.log(data);
+    //   })
+    //   .catch(function (err) {
+    //     console.log("Error");
+    //   });
 
-  //   const res = response.json();
-  //   console.log(res);
-  // };
+    // const res = response.json();
+    // console.log(res);
+
+    const response = await fetch("http://127.0.0.1:5000/members");
+    const data = await response.json();
+    if (data) {
+      console.log("dataa", data);
+    }
+  };
 
   useEffect(() => {
-    fetch("https://localhost:5000/members", {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      mode: "cors",
-      cache: "default",
-    })
-      .then((res) => {
-        if (res.ok) {
-          console.log("Works");
-        }
-        // res.json())
-      })
-      .then((data) => {
-        setData(data);
-        console.log(data);
-      })
-      .catch(function (err) {
-        console.log("Error");
-      });
-    // getData();
+    getData();
   }, []);
 
   const topic = "Global Alignment";
