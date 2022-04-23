@@ -266,7 +266,7 @@ def members():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("jsonnn",json['seq1'])
+        print("members",json)
         return json
 
     return {"error": "Unable to retreive data at this moment"}
@@ -277,6 +277,7 @@ def globalAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
+        print("global Data",json)
         return json
 
     return {"error": "Unable to retreive data at this moment"}
@@ -287,6 +288,7 @@ def localAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
+        print("local Data",json)
         return json
 
     return {"error": "Unable to retreive data at this moment"}
@@ -299,7 +301,9 @@ def dnaToProteinRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
+        print("dna to protein",json)
         return json
+        
 
     return {"error": "Unable to retreive data at this moment"}
 
@@ -310,6 +314,7 @@ def OrfsRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
+        print("orfs",json)
         return json
 
     return {"error": "Unable to retreive data at this moment"}
