@@ -27,7 +27,11 @@ function Header() {
         />
 
         <title>Sahaayak</title>
-        <link rel="icon" type="image/x-icon" href="logo.svg" />
+        <link
+          rel="icon"
+          type="image/x-icon"
+          href="https://i.ibb.co/jwDZB3g/Group-25.png"
+        />
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
@@ -45,20 +49,29 @@ function Header() {
         />
         <meta name="author" content="Sahaayak" />
 
-        <meta name="twitter:card" content="logo.svg" />
+        <meta
+          name="twitter:card"
+          content="https://i.ibb.co/jwDZB3g/Group-25.png"
+        />
         <meta name="twitter:site" content="https://sahaayak.vercel.app/" />
         <meta name="twitter:title" content="Sahaayak" />
         <meta
           name="twitter:description"
           content="A 2022 Web App for all of your Bioinformatics needs."
         />
-        <meta name="twitter:image:src" content="logo.svg" />
+        <meta
+          name="twitter:image:src"
+          content="https://i.ibb.co/jwDZB3g/Group-25.png"
+        />
         <meta name="twitter:image:alt" content="Sahaayak" />
 
         <meta property="og:url" content="https://sahaayak.vercel.app/" />
         <meta property="og:type" content="Biology" />
         <meta property="og:title" content="Sahaayak" />
-        <meta property="og:image" content="logo.svg" />
+        <meta
+          property="og:image"
+          content="https://i.ibb.co/jwDZB3g/Group-25.png"
+        />
         <meta
           property="og:description"
           content="A 2022 Web App for all of your Bioinformatics needs."
@@ -70,7 +83,10 @@ function Header() {
           itemProp="description"
           content="A 2022 Web App for all of your Bioinformatics needs."
         />
-        <meta itemProp="image" content="logo.svg" />
+        <meta
+          itemProp="image"
+          content="https://i.ibb.co/jwDZB3g/Group-25.png"
+        />
       </Head>
       <Link href="/">
         <motion.h1
