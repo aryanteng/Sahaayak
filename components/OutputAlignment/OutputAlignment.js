@@ -42,7 +42,7 @@ function OutputAlignment({ matrix, original, optimal }) {
               {original ? (
                 original.map((item, index) => {
                   return (
-                    <div className={styles.alignments}>
+                    <div className={styles.alignments} key={index}>
                       {item}
                       <br></br>
                       {optimal[index]}
