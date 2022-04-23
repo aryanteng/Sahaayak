@@ -8,33 +8,6 @@ import styles from "../styles/Global.module.css";
 
 export default function Global() {
   const [data, setData] = useState([{}]);
-
-  const getData = async () => {
-    const response = await fetch("http://127.0.0.1:5000/members/", {
-      // Adding method type
-      method: "POST",
-      // Adding body or contents to send
-      body: JSON.stringify({
-        title: "foo",
-        body: "bar",
-        userId: 1,
-      }),
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
-
-    const data = await response.json();
-    if (data) {
-      console.log("dataa", data);
-    }
-  };
-
-  useEffect(() => {
-    getData();
-  }, []);
-
   const topic = "Global Alignment";
   const definition =
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
@@ -45,12 +18,31 @@ export default function Global() {
   const [match, setMatch] = useState("");
   const [misMatch, setMisMatch] = useState("");
 
-  const submit = () => {
-    console.log("seqA", seqA);
-    console.log("seqB", seqB);
-    console.log("gap", gap);
-    console.log("match", match);
+  const submit = async () => {
+    const response = await fetch("http://127.0.0.1:5000/global/", {
+      // Adding method type
+      method: "POST",
+      // Adding body or contents to send
+      body: JSON.stringify({
+        seqA: seqA,
+        seqB: seqB,
+        gap: gap,
+        misMatch: misMatch,
+        match: match,
+      }),
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+
+    const res = await response.json();
+    if (res) {
+      console.log("dataa", res);
+      setData(res);
+    }
   };
+
   return (
     <>
       <Header />

@@ -278,7 +278,8 @@ def globalAlignmentRoute():
     if (content_type == 'application/json'):
         json = request.json
         print("global Data",json)
-        return json
+        ans = globalAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']) )
+        return {"body":ans}
 
     return {"error": "Unable to retreive data at this moment"}
 
