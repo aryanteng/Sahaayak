@@ -91,50 +91,53 @@ def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
                                 0)
             else:
                 arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + matchScore, 0)
-    x, y, maxElement = 0, 0, 0
+    maxElement = 0
+    x =[]
+    y =[]
     for i in range(1, len(sequence2) + 1):
         for j in range(1, len(sequence1) + 1):
-            if (arr[i][j] > maxElement):
+            if arr[i][j] >= maxElement:
                 maxElement = arr[i][j]
-                x = i
-                y = j
+                x.append(i)
+                y.append(j)
 
     def optimalSequence(solSeq1, solSeq2, x, y, score):
-        if (arr[x][y] == 0):
-            seq1List.append(solSeq1);
-            seq2List.append(solSeq2);
+        if arr[x][y] == 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
             scorelist.append(score)
             return
-        if (x < 0 or y < 0):
-            seq1List.append(solSeq1);
-            seq2List.append(solSeq2);
+        if x < 0 or y < 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
             scorelist.append(score)
             return
-        if (x == 0 and y == 0):
-            seq1List.append(solSeq1);
-            seq2List.append(solSeq2);
+        if x == 0 and y == 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
             scorelist.append(score)
             return
-        elif (x == 0):
+        elif x == 0:
             optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
             return
-        elif (y == 0):
+        elif y == 0:
             optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
             return
         fromLeft = arr[x][y - 1]
         fromUp = arr[x - 1][y]
         ifFromGap = arr[x][y] - gapScore
 
-        if (sequence2[x - 1] == sequence1[y - 1]):
+        if sequence2[x - 1] == sequence1[y - 1]:
             optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + matchScore)
         else:
             optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + mismatchScore)
-        if (ifFromGap == fromUp):
+        if ifFromGap == fromUp:
             optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
-        if (ifFromGap == fromLeft):
+        if ifFromGap == fromLeft:
             optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
 
-    optimalSequence("", "", x, y, 0)
+    for i in range(len(x)):
+        optimalSequence("", "", x[i], y[i], 0)
     bestScoreSol = []
     maxScore = -1
     optSeq1 = []
@@ -151,11 +154,42 @@ def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
 
     return arr, optSeq1, optSeq2, maxScore
 
-
 #------------------------------------------------------------------------------------------------------------------
 #Orfs
+def ORFS(dna):
+    reversedDna = dna[::-1]
 
-def convertTomRna(dna):
+    def findORF(seq):
+        orfs = []
+        startCodons = []
+        stopcodons = []
+        i = 0
+        if "ATG" in seq:
+            while i < len(seq) - 2:
+                if seq[i:(i + 3)] == "ATG":
+                    startCodons.append(i)
+                if seq[i:(i + 3)] == "TAG" or seq[i:(i + 3)] == "TGA" or seq[i:(i + 3)] == "TAA":
+                    stopcodons.append(i)
+                i += 3
+        for i in startCodons:
+            for j in stopcodons:
+                if i < j:
+                    orfs.append(seq[i:j + 1])
+                    break
+        return orfs
+
+    orfs1 = findORF(dna)
+    orfs2 = findORF(dna[1:])
+    orfs3 = findORF(dna[2:])
+    orfs4 = findORF(reversedDna)
+    orfs5 = findORF(reversedDna[1:])
+    orfs6 = findORF(reversedDna[2:])
+    return orfs1, orfs2, orfs3, orfs4, orfs5, orfs6
+
+#------------------------------------------------------------------------------------------------------------------
+#Protein
+
+def getProtein(dna):
     mrna = ""
     for i in range(len(dna)):
         if dna[i] == 'A':
@@ -166,90 +200,47 @@ def convertTomRna(dna):
             mrna += 'C'
         elif dna[i] == 'C':
             mrna += 'G'
-    return mrna
-
-
-def findORF(mrna):
-    orfs = []
-    startCodons = []
-    stopcodons = []
-
-    i = 0
-    if "AUG" in mrna:
-        while i < len(mrna) - 2:
-            if mrna[i:(i + 3)] == "AUG":
-                startCodons.append(i)
-            if mrna[i:(i + 3)] == "UAG" or mrna[i:(i + 3)] == "UGA" or mrna[i:(i + 3)] == "UAA":
-                stopcodons.append(i)
-            i += 3
-    for i in startCodons:
-        for j in stopcodons:
-            if i < j:
-                orfs.append(mrna[i:j + 1])
-                break
-    return orfs
-
-
-def ORFS(DNA):
-    dna = DNA
-    mrna = convertTomRna(dna)
-    reversemrna = mrna[::-1]
-    orfs1 = findORF(mrna)
-    orfs2 = findORF(mrna[1:])
-    orfs3 = findORF(mrna[2:])
-    orfs4 = findORF(reversemrna)
-    orfs5 = findORF(reversemrna[1:])
-    orfs6 = findORF(reversemrna[2:])
-    return orfs1, orfs2, orfs3, orfs4, orfs5, orfs6
-
-
-#------------------------------------------------------------------------------------------------------------------
-#Protein
-
-
-def getProtein(dna):
-    mrna = convertTomRna(dna)
     reversedMrna = mrna[::-1]
-    proteinFrame1,proteinFrame2 = calculateProtein(0,mrna,reversedMrna)
-    proteinFrame3, proteinFrame4 = calculateProtein(1, mrna, reversedMrna)
-    proteinFrame5, proteinFrame6 = calculateProtein(2, mrna, reversedMrna)
+
+    def calculateProtein(t):
+        dicti = {
+            "Ala": ["GCU", "GCA", "GCG", "GCC"],
+            "Arg": ["AGA", "AGG", "CGU", "CGA", "CGG", "CGC"],
+            "Asn": ["AAU", "AAC"],
+            "Asp": ["GAU", "GAC"],
+            "Cys": ["UGU", "UGC"],
+            "Glu": ["GAA", "GAG"],
+            "Gln": ["CAA", "CAG"],
+            "Gly": ["GGU", "GGA", "GGG", "GGC"],
+            "His": ["CAU", "CAC"],
+            "Ile": ["AUU", "AUC", "AUA"],
+            "Leu": ["UUA", "UUG"],
+            "Lys": ["AAA", "AAG"],
+            "Met": ["AUG"],
+            "Phe": ["UUU", "UUC"],
+            "Pro": ["CCU", "CCA", "CCC", "CCG"],
+            "Ser": ["UCA", "UCU", "UCC", "UCG"],
+            "Thr": ["ACA", "ACU", "ACG", "ACC"],
+            "Trp": ["UGG"],
+            "Tyr": ["UAU", "UAC"],
+            "Val": ["GUA", "GUU", "GUC", "GUG"],
+            "-": ["UGA", "UAA", "UAG"]
+        }
+        p1 = ""
+        p2 = ""
+        while t < len(mrna) - 2:
+            for key in dicti:
+                if mrna[t:t + 3] in dicti[key]:
+                    p1 += key
+                if reversedMrna[t:t + 3] in dicti[key]:
+                    p2 += key
+            t += 3
+        return p1, p2
+
+    proteinFrame1, proteinFrame2 = calculateProtein(0)
+    proteinFrame3, proteinFrame4 = calculateProtein(1)
+    proteinFrame5, proteinFrame6 = calculateProtein(2)
     return proteinFrame1, proteinFrame2, proteinFrame3, proteinFrame4, proteinFrame5, proteinFrame6
-
-
-def calculateProtein(i, mrna, reversedMrna):
-    dicti = {
-        "Ala": ["GCU", "GCA", "GCG", "GCC"],
-        "Arg": ["AGA", "AGG", "CGU", "CGA", "CGG", "CGC"],
-        "Asn": ["AAU", "AAC"],
-        "Asp": ["GAU", "GAC"],
-        "Cys": ["UGU", "UGC"],
-        "Glu": ["GAA", "GAG"],
-        "Gln": ["CAA", "CAG"],
-        "Gly": ["GGU", "GGA", "GGG", "GGC"],
-        "His": ["CAU", "CAC"],
-        "Ile": ["AUU", "AUC", "AUA"],
-        "Leu": ["UUA", "UUG"],
-        "Lys": ["AAA", "AAG"],
-        "Met": ["AUG"],
-        "Phe": ["UUU", "UUC"],
-        "Pro": ["CCU", "CCA", "CCC", "CCG"],
-        "Ser": ["UCA", "UCU", "UCC", "UCG"],
-        "Thr": ["ACA", "ACU", "ACG", "ACC"],
-        "Trp": ["UGG"],
-        "Tyr": ["UAU", "UAC"],
-        "Val": ["GUA", "GUU", "GUC", "GUG"],
-        "-": ["UGA", "UAA", "UAG"]
-    }
-    p1 = ""
-    p2 = ""
-    while i < len(mrna) - 2:
-        for key in dicti:
-            if mrna[i:i + 3] in dicti[key]:
-                p1 += key
-            if reversedMrna[i:i + 3] in dicti[key]:
-                p2 += key
-    return p1, p2
-
 
 
 
@@ -260,7 +251,6 @@ def members():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("members",json)
         return json
 
     return {"error": "Unable to retreive data at this moment"}
@@ -271,7 +261,6 @@ def globalAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("global Data",json)
         ans = globalAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
         return {"body":ans}
 
@@ -283,7 +272,6 @@ def localAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("local Data",json)
         ans = localAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
         return {"body":ans}
 
@@ -297,8 +285,8 @@ def dnaToProteinRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("dna to protein",json)
-        return json
+        ans = getProtein(json['dna'])
+        return {"body":ans}
         
 
     return {"error": "Unable to retreive data at this moment"}
@@ -310,8 +298,8 @@ def OrfsRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        print("orfs",json)
-        return json
+        ans = ORFS(json['dna'])
+        return {"body": ans}
 
     return {"error": "Unable to retreive data at this moment"}
 

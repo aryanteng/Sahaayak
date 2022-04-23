@@ -9,7 +9,7 @@
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   background-color: var(--white);
-  border: 1px solid var(--theme);
+  border: 2px solid var(--theme);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -43,7 +43,7 @@
   border-radius: 1rem;
   color: #fff;
   font-family: "Poppins", "sans-serif";
-  border: 1px solid var(--theme);
+  border: 2px solid var(--theme);
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 0.5rem;
@@ -60,7 +60,7 @@
   border-radius: 5rem;
   color: #fff;
   font-family: "Poppins", "sans-serif";
-  border: 1px solid var(--theme);
+  border: 2px solid var(--theme);
   padding-left: 0.5rem;
   padding-right: 0.5rem;
   padding-top: 0.25rem;
@@ -84,7 +84,7 @@
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  border: 1px solid var(--theme);
+  border: 2px solid var(--theme);
   border-radius: 4rem;
   width: fit-content;
   font-size: 0.8rem;

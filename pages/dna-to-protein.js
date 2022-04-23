@@ -12,10 +12,25 @@ export default function DNA_To_Protein() {
     "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   const [seq, setSeq] = useState("");
-  const [output, setOutput] = useState("");
-
-  const submit = () => {
-    setOutput(seq);
+  const [output, setOutput] = useState([]);
+  const submit = async () => {
+    const response = await fetch("http://127.0.0.1:5000/dna-to-protein/", {
+      // Adding method type
+      method: "POST",
+      // Adding body or contents to send
+      body: JSON.stringify({
+        dna: seq,
+      }),
+      // Adding headers to the request
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+    const res = await response.json();
+    if (res) {
+      setOutput(res.body);
+      console.log("dna-protein", res.body);
+    }
   };
 
   return (

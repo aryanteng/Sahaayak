@@ -95,6 +95,8 @@ export default function Local() {
             original={original}
             matrix={matrix}
             maxScore={maxScore}
+            seqA={seqA}
+            seqB={seqB}
           />
         ) : (
           <></>

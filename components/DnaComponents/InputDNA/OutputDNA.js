@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./styles.module.css";
 
-function OutputDNA({ isOrf, output, setOutput }) {
+function OutputDNA({ isOrf, output }) {
   const downloadTxtFile = () => {
     const element = document.createElement("a");
     const file = new Blob([output], {
