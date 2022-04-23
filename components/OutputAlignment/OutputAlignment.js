@@ -7,31 +7,51 @@ function OutputAlignment({ matrix, original, optimal }) {
       <div className={styles.infoBox}>
         <h1>Output</h1>
         <div className={styles.boxContainer}>
-          <div className={styles.box}>
-            <p>Alignment Matrix</p>
-            <div className={styles.matrix}>
-              {matrix.map((item) => {
-                matrix.map((index) => {
-                  return <p style={{ fontSize: "1rem" }}>{item.index}</p>;
-                });
-              })}
+          <div className={styles.flexDiv}>
+            <div className={styles.box}>
+              <p style={{ marginLeft: "1rem" }}>Alignment Matrix</p>
+              <div className={styles.matrix}>
+                <table>
+                  <tbody>
+                    {matrix.map((numList, i) => (
+                      <tr key={i}>
+                        {numList.map((num, j) => (
+                          <td
+                            key={j}
+                            style={{
+                              width: 50,
+                              height: 50,
+                              color: "#fff",
+                              border: "2px solid var(--theme)",
+                              textAlign: "center",
+                              borderRadius: 5,
+                            }}
+                          >
+                            {num}
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
             </div>
-          </div>
-          <div className={styles.box}>
-            <p style={{ marginLeft: "1rem" }}>Optimal Alignments</p>
-            {original ? (
-              original.map((item, index) => {
-                return (
-                  <div className={styles.alignments}>
-                    {item}
-                    <br></br>
-                    {optimal[index]}
-                  </div>
-                );
-              })
-            ) : (
-              <div className={styles.alignments}></div>
-            )}
+            <div className={styles.box2} style={{ width: "50%" }}>
+              <p className={styles.para}>Optimal Alignments</p>
+              {original ? (
+                original.map((item, index) => {
+                  return (
+                    <div className={styles.alignments}>
+                      {item}
+                      <br></br>
+                      {optimal[index]}
+                    </div>
+                  );
+                })
+              ) : (
+                <div className={styles.alignments}></div>
+              )}
+            </div>
           </div>
           <img className={styles.img} src="assets/Output.svg" width="150"></img>
         </div>

@@ -71,11 +71,15 @@ export default function Global() {
           setGap={setGap}
           submit={submit}
         />
-        <OutputAlignment
-          optimal={optimal}
-          original={original}
-          matrix={matrix}
-        />
+        {optimal.length > 0 && original.length > 0 && matrix.length > 0 ? (
+          <OutputAlignment
+            optimal={optimal}
+            original={original}
+            matrix={matrix}
+          />
+        ) : (
+          <></>
+        )}
       </div>
       <Footer />
     </>
