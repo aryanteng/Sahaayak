@@ -14,7 +14,7 @@ def members():
         print("jsonnn",json)
         return json
         
-    return {"members": ["Members1", "Member2", "Member3"]}
+    return {"error": "Unable to retreive data at this moment"}
 
 
 if __name__ == "__main__":
