@@ -51,8 +51,29 @@
   width: 95%;
   height: 8rem;
   overflow-y: auto;
+  overflow-x: hidden;
   font-size: 16px;
   resize: none;
+}
+
+/* width */
+.input::-webkit-scrollbar {
+  width: 10px;
+  height: 5px;
+}
+
+/* Track */
+.input::-webkit-scrollbar-track {
+  background: var(--white);
+  margin-top: 0;
+  margin: 15px;
+}
+
+/* Handle */
+.input::-webkit-scrollbar-thumb {
+  background: var(--theme);
+  border: 3px solid var(--theme);
+  border-radius: 20px;
 }
 
 .smallInput {
@@ -61,11 +82,11 @@
   color: #fff;
   font-family: "Poppins", "sans-serif";
   border: 2px solid var(--theme);
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-  width: 25%;
+  padding: 0.5rem !important;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  font-weight: 600;
+  width: 110px;
 }
 
 .penalties {
@@ -73,7 +94,8 @@
   align-items: center;
 }
 
-.input:focus {
+.input:focus,
+.smallInput:focus {
   outline: none;
 }
 

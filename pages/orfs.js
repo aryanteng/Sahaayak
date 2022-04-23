@@ -45,6 +45,7 @@ export default function ORFS() {
           output={output}
           setOutput={setOutput}
           submit={submit}
+          isOrf={true}
         />
         {output.length > 0 && <OutputDNA isOrf={true} output={output} />}
       </div>

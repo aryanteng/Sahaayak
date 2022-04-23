@@ -86,3 +86,10 @@ img {
   width: 7px;
   transition: all 200ms ease-out;
 }
+
+@media (max-width: 700px) {
+  .cursor,
+  .cursor2 {
+    display: none;
+  }
+}
