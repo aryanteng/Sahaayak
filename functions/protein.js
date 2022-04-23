@@ -15,6 +15,8 @@ export default function getProtein(dna) {
   [proteinFrame1, proteinFrame2] = calculateProtein(0, mrna, reversedMrna);
   [proteinFrame3, proteinFrame4] = calculateProtein(1, mrna, reversedMrna);
   [proteinFrame5, proteinFrame6] = calculateProtein(2, mrna, reversedMrna);
+  console.log("hi");
+  console.log("hi2", proteinFrame1);
   return [
     proteinFrame1,
     proteinFrame2,
@@ -53,19 +55,37 @@ function calculateProtein(i, mrna, reversedMrna) {
   p1 = "";
   p2 = "";
 
-  //   while i < len(mrna) - 2:
-  //   for key in dicti:
-  //       if mrna[i:i + 3] in dicti[key]:
-  //           p1 += key
-  //       if reversedMrna[i:i + 3] in dicti[key]:
-  //           p2 += key
-  // return p1, p2
+  reversedMrna = slice(reversedMrna);
 
   while (i < mrna.length - 2) {
     for (key in dicti) {
-      console.log(key);
+      if (mrna[`${i}:${i + 3}`] in dicti[key]) {
+        p1 += key;
+      }
+      if (reversedMrna[`${i}:${i + 3}`] in dicti[key]) {
+        p2 += key;
+      }
     }
   }
 
   return [p1, p2];
+}
+
+function convertTomRna(dna) {
+  var mrna;
+  mrna = "";
+
+  for (var i = 0, _pj_a = dna.length; i < _pj_a; i += 1) {
+    if (dna[i] === "A") {
+      mrna += "U";
+    } else if (dna[i] === "T") {
+      mrna += "A";
+    } else if (dna[i] === "G") {
+      mrna += "C";
+    } else if (dna[i] === "C") {
+      mrna += "G";
+    }
+  }
+
+  return mrna;
 }
