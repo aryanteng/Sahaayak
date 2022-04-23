@@ -208,7 +208,7 @@ def ORFS(DNA):
     orfs6 = findORF(reversemrna[2:])
     return orfs1, orfs2, orfs3, orfs4, orfs5, orfs6
 
-    
+
 #------------------------------------------------------------------------------------------------------------------
 #Protein
 
@@ -273,7 +273,7 @@ def members():
 
 #ROUTE FOR GLOBAL
 @app.route('/global/', methods=['POST'])
-def globalAlignment():
+def globalAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
@@ -283,7 +283,7 @@ def globalAlignment():
 
 #ROUTE FOR LOCAL
 @app.route('/local/', methods=['POST'])
-def localAlignment():
+def localAlignmentRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
@@ -295,7 +295,7 @@ def localAlignment():
 
 #ROUTE FOR DNA-TO-PROTEIN
 @app.route('/dna-to-protein/', methods=['POST'])
-def dnaToProtein():
+def dnaToProteinRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
@@ -306,7 +306,7 @@ def dnaToProtein():
 
 #ROUTE FOR ORFS
 @app.route('/orfs/', methods=['POST'])
-def Orfs():
+def OrfsRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
