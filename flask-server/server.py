@@ -82,78 +82,78 @@ def globalAlignment(seq_1, seq_2, match, mismatch, gap):
 
 #LOCAL ALIGNMNET
 #------------------------------------------------------------------------------------------------------------------
-
-scorelist=[]
-seq1List=[]
-seq2List=[]
-
-def generateArray():
-    cols,rows = len(sequence1)+1,len(sequence2)+1
+def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
+    scorelist = []
+    seq1List = []
+    seq2List = []
+    cols, rows = len(sequence1) + 1, len(sequence2) + 1
     arr = [[0 for i in range(cols)] for j in range(rows)]
-    for i in range(1, len(sequence2)+1):
-        for j in range(1, len(sequence1)+1):
-            if (sequence2[i-1] != sequence1[j-1]):
-                arr[i][j] = max(arr[i][j-1]+gapScore, arr[i-1][j]+gapScore, arr[i-1][j-1]+mismatchScore,0)
-            else:
-                arr[i][j] = max(arr[i][j-1]+gapScore, arr[i-1][j]+gapScore, arr[i-1][j-1]+matchScore,0)
-    return arr
-
-def optimalSequence(solSeq1, solSeq2, x, y,score):
-    if (arr[x][y]==0):
-        seq1List.append(solSeq1);seq2List.append(solSeq2);scorelist.append(score)
-        return
-    if (x <0 or y < 0):
-        seq1List.append(solSeq1);seq2List.append(solSeq2);scorelist.append(score)
-        return 
-    if (x == 0 and y == 0):
-        seq1List.append(solSeq1);seq2List.append(solSeq2);scorelist.append(score)
-        return 
-    elif(x==0):
-        optimalSequence(sequence1[y-1]+solSeq1 ,"-"+solSeq2 , x, y-1,score+gapScore)
-        return
-    elif(y==0):
-        optimalSequence("-"+solSeq1, sequence2[x-1]+solSeq2, x-1, y,score+gapScore)
-        return
-    fromLeft = arr[x][y-1]
-    fromUp = arr[x-1][y]
-    ifFromGap=arr[x][y]- gapScore
-    
-    if (sequence2[x-1] == sequence1[y-1]):
-        optimalSequence(sequence1[y-1]+solSeq1, sequence2[x-1]+solSeq2, x-1, y-1, score+matchScore)
-    else:
-        optimalSequence(sequence1[y-1]+solSeq1, sequence2[x-1]+solSeq2, x-1, y-1, score+mismatchScore)
-    if (ifFromGap == fromUp):
-        optimalSequence("-"+solSeq1, sequence2[x-1]+solSeq2, x-1, y, score+gapScore)
-    if (ifFromGap == fromLeft):
-        optimalSequence(sequence1[y-1]+solSeq1, "-"+solSeq2, x, y-1, score+gapScore)
-
-
-def localAlignment(seq1, seq2, matchscore, mismatchscore, gapscore):
-    global arr, sequence1, sequence2, matchScore, mismatchScore, gapScore
-    sequence1  = seq1
-    sequence2 = seq2
-    matchScore = matchscore
-    mismatchScore = mismatchscore
-    gapScore = gapscore
-    arr = generateArray()
-    x,y,maxElement=0,0,0
     for i in range(1, len(sequence2) + 1):
         for j in range(1, len(sequence1) + 1):
-            if(arr[i][j]>maxElement):
-                maxElement= arr[i][j]
-                x=i
-                y=j
-    optimalSequence("", "", x, y,0) 
-    bestScoreSol =[]
-    maxScore=-1
-    for i in range(len(scorelist)):
-        if(maxScore<scorelist[i]):
-            maxScore=scorelist[i]
-    for i in range(len(scorelist)):
-        if(maxScore==scorelist[i]):
-            bestScoreSol.append(i)
-    return arr, seq1List, seq2List, scoreList
+            if (sequence2[i - 1] != sequence1[j - 1]):
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + mismatchScore,
+                                0)
+            else:
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + matchScore, 0)
+    x, y, maxElement = 0, 0, 0
+    for i in range(1, len(sequence2) + 1):
+        for j in range(1, len(sequence1) + 1):
+            if (arr[i][j] > maxElement):
+                maxElement = arr[i][j]
+                x = i
+                y = j
 
+    def optimalSequence(solSeq1, solSeq2, x, y, score):
+        if (arr[x][y] == 0):
+            seq1List.append(solSeq1);
+            seq2List.append(solSeq2);
+            scorelist.append(score)
+            return
+        if (x < 0 or y < 0):
+            seq1List.append(solSeq1);
+            seq2List.append(solSeq2);
+            scorelist.append(score)
+            return
+        if (x == 0 and y == 0):
+            seq1List.append(solSeq1);
+            seq2List.append(solSeq2);
+            scorelist.append(score)
+            return
+        elif (x == 0):
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+            return
+        elif (y == 0):
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+            return
+        fromLeft = arr[x][y - 1]
+        fromUp = arr[x - 1][y]
+        ifFromGap = arr[x][y] - gapScore
+
+        if (sequence2[x - 1] == sequence1[y - 1]):
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + matchScore)
+        else:
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + mismatchScore)
+        if (ifFromGap == fromUp):
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+        if (ifFromGap == fromLeft):
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+
+    optimalSequence("", "", x, y, 0)
+    bestScoreSol = []
+    maxScore = -1
+    optSeq1 = []
+    optSeq2 = []
+    for i in range(len(scorelist)):
+        if maxScore < scorelist[i]:
+            maxScore = scorelist[i]
+    for i in range(len(scorelist)):
+        if maxScore == scorelist[i]:
+            bestScoreSol.append(i)
+    for i in bestScoreSol:
+        optSeq1.append(seq1List[i])
+        optSeq2.append(seq2List[i])
+
+    return arr, optSeq1, optSeq2, maxScore
 
 
 #------------------------------------------------------------------------------------------------------------------
@@ -289,7 +289,7 @@ def localAlignmentRoute():
         json = request.json
         print("local Data",json)
         ans = localAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
-        return json
+        return {"body":ans}
 
     return {"error": "Unable to retreive data at this moment"}
 

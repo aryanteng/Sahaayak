@@ -49,9 +49,6 @@ export default function Global() {
       console.log("optimal", optimal);
     }
   };
-  // useEffect(() => {
-  //   submit();
-  // }, []);
 
   return (
     <>
