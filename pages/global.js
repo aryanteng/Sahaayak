@@ -10,25 +10,6 @@ export default function Global() {
   const [data, setData] = useState([{}]);
 
   const getData = async () => {
-    // const response = await fetch("https://localhost:5000/members")
-    //   .then((res) => {
-    //     if (res.ok) {
-    //       console.log("Works");
-    //     }
-    //     console.log(res.json());
-    //     // res.json())
-    //   })
-    //   .then((data) => {
-    //     setData(data);
-    //     console.log(data);
-    //   })
-    //   .catch(function (err) {
-    //     console.log("Error");
-    //   });
-
-    // const res = response.json();
-    // console.log(res);
-
     const response = await fetch("http://127.0.0.1:5000/members");
     const data = await response.json();
     if (data) {
