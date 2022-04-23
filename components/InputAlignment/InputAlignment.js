@@ -13,6 +13,7 @@ function InputAlignment({
   setMisMatch,
   setGap,
   submit,
+  error,
 }) {
   return (
     <div className={styles.container}>
@@ -78,6 +79,11 @@ function InputAlignment({
         >
           Submit
         </div>
+        {error ? (
+          <p style={{ fontSize: "1rem", color: "var(--theme)" }}>{error}</p>
+        ) : (
+          ""
+        )}
       </div>
       <img className={styles.img} src="assets/Flask.svg" width="150"></img>
     </div>

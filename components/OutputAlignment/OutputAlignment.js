@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-function OutputAlignment({ matrix, original, optimal }) {
+function OutputAlignment({ matrix, original, optimal, maxScore }) {
   return (
     <div className={styles.container}>
       <div className={styles.infoBox}>
@@ -36,6 +36,9 @@ function OutputAlignment({ matrix, original, optimal }) {
                   </tbody>
                 </table>
               </div>
+              <p style={{ marginLeft: "1rem", marginTop: "-1rem" }}>
+                Optimal Alignment Score : {maxScore}
+              </p>
             </div>
             <div className={styles.box2} style={{ width: "50%" }}>
               <p className={styles.para}>Optimal Alignments</p>

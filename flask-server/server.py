@@ -8,77 +8,73 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #------------------------------------------------------------------------------------------------------------------
 
 #Global Alignment
-def globalAlignment(seq_1, seq_2, match, mismatch, gap):
-    rows = len(seq_1)+1
-    cols = len(seq_2)+1
-    arr = []
-
-    # forming the arr and filling it with 0s
-    for r in range(0, rows):
-            arr.append([0 for c in range(0, cols)])
-
-    # adding the gap penalties in the first row and column
-    for i in range(1, len(seq_1)+1):
-        arr[i][0] = arr[i - 1][0] + gap
-    for i in range(1, len(seq_2)+1):
-        arr[0][i] = arr[0][i-1] + gap
-
-    # traversing the array looking for matches and adding the score to the element accordingly
-    for i in range(1, len(seq_1)+1):
-        for j in range(1, len(seq_2)+1):
-            if seq_1[i - 1] == seq_2[j - 1]:
-                diagonalScore = arr[i - 1][j - 1] + match
-                arr[i][j] = diagonalScore
+def globalAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
+    cols, rows = len(sequence1) + 1, len(sequence2) + 1
+    scorelist = []
+    seq1List = []
+    seq2List = []
+    arr = [[0 for k in range(cols)] for l in range(rows)]
+    score: int = 0
+    for i in range(rows):
+        arr[i][0] = score
+        score += gapScore
+    score = 0
+    for i in range(cols):
+        arr[0][i] = score
+        score += gapScore
+    for i in range(1, len(sequence2) + 1):
+        for j in range(1, len(sequence1) + 1):
+            if sequence2[i - 1] != sequence1[j - 1]:
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + mismatchScore)
             else:
-                diagonalScore = arr[i - 1][j - 1] + mismatch
-                leftScore = arr[i][j - 1] + gap
-                upScore = arr[i - 1][j] + gap
-                arr[i][j] = max(diagonalScore, leftScore, upScore)
-    
-    optimal= []
-    # now we create a function for finding all optimal alignments
-    def optAlignment(stringLeft, stringUp, arr, i, j):
-        optimalArr = []
-        if i == 1 and j == 1:
-            stringUp += seq_2[j-1]
-            stringLeft += seq_2[j-1]
-            if '-' in stringUp:
-                optimal.append(stringUp[::-1])
-            if '-' in stringLeft:
-                optimal.append(stringLeft[::-1])
-                
-        # value of element at row i and column j
-        element = arr[i][j]
-        
-        # the score of gap penalty
-        gap_penalty = element - gap
-        
-        if seq_2[j-1] == seq_1[i-1]:
-            optAlignment(stringLeft+seq_2[j-1], stringUp+seq_1[i-1], arr, i-1, j-1)
-            if gap_penalty == arr[i-1][j]:
-                stringUp += '-'
-                optAlignment(stringLeft, stringUp, arr, i-1, j)
-            
-            if gap_penalty == arr[i][j-1]:
-                stringLeft += '-'
-                optAlignment(stringLeft, stringUp, arr, i, j-1) 
-            
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + matchScore)
+
+    def optimalSequence(solSeq1, solSeq2, x, y, score):
+        if x < 0 or y < 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
+            scorelist.append(score)
+            return
+        if x == 0 and y == 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
+            scorelist.append(score)
+            return
+        elif x == 0:
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+            return
+        elif y == 0:
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+            return
+        fromLeft = arr[x][y - 1]
+        fromUp = arr[x - 1][y]
+        ifFromGap = arr[x][y] - gapScore
+
+        if sequence2[x - 1] == sequence1[y - 1]:
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + matchScore)
         else:
-            if gap_penalty == arr[i-1][j]:
-                stringUp += '-'
-                optAlignment(stringLeft, stringUp, arr, i-1, j)
-                
-            if gap_penalty == arr[i][j-1]:
-                stringLeft += '-'
-                optAlignment(stringLeft, stringUp, arr, i, j-1) 
-    optAlignment('', '', arr, rows-1, cols-1)
-    original = []
-    for i in range(0, len(optimal)):
-        if(len(seq_1) > len(seq_2)):
-            original.append(seq_1)
-        else:
-            original.append(seq_2)
-    return arr, original, optimal
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + mismatchScore)
+        if ifFromGap == fromUp:
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+        if ifFromGap == fromLeft:
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+
+    optimalSequence("", "", len(sequence2), len(sequence1), 0)
+    bestScoreSol = []
+    optSeq1 = []
+    optSeq2 = []
+    maxScore = -1
+    for i in range(len(scorelist)):
+        if maxScore < scorelist[i]:
+            maxScore = scorelist[i]
+    for i in range(len(scorelist)):
+        if maxScore == scorelist[i]:
+            bestScoreSol.append(i)
+    for i in bestScoreSol:
+        optSeq1.append(seq1List[i])
+        optSeq2.append(seq2List[i])
+
+    return arr, optSeq1, optSeq2, maxScore
 
 #LOCAL ALIGNMNET
 #------------------------------------------------------------------------------------------------------------------
