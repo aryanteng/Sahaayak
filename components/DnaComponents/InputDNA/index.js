@@ -69,11 +69,40 @@ function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen }) {
                 },
               }}
             >
-              <MenuItem value={30}>30</MenuItem>
-              <MenuItem value={75}>75</MenuItem>
-              <MenuItem value={150}>150</MenuItem>
-              <MenuItem value={300}>300</MenuItem>
-              <MenuItem value={600}>600</MenuItem>
+              <MenuItem
+                style={{ width: "100%", textAlign: "center" }}
+                value={30}
+              >
+                30
+              </MenuItem>
+              <br />
+              <MenuItem
+                style={{ width: "100%", textAlign: "center" }}
+                value={75}
+              >
+                75
+              </MenuItem>
+              <br />
+              <MenuItem
+                style={{ width: "100%", textAlign: "center" }}
+                value={150}
+              >
+                150
+              </MenuItem>
+              <br />
+              <MenuItem
+                style={{ width: "100%", textAlign: "center" }}
+                value={300}
+              >
+                300
+              </MenuItem>
+              <br />
+              <MenuItem
+                style={{ width: "100%", textAlign: "center" }}
+                value={600}
+              >
+                600
+              </MenuItem>
             </Select>
           </div>
         )}
