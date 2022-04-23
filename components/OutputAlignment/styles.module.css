@@ -73,10 +73,21 @@
   font-size: 0.8rem;
 }
 
-.tableItem:hover {
+.tableItem:hover,
+.tableHeading:hover {
   background-color: var(--theme);
   color: #000 !important;
   transition: 0.2s;
+}
+
+.tableHeading {
+  width: 65px;
+  height: 65px;
+  color: #fff;
+  border: 2px solid var(--theme);
+  text-align: center;
+  border-radius: 5px;
+  font-size: 1.2rem;
 }
 
 @media (max-width: 800px) {

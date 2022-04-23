@@ -1,7 +1,15 @@
 import React, { useState } from "react";
 import styles from "./styles.module.css";
 
-function OutputAlignment({ matrix, original, optimal, maxScore }) {
+function OutputAlignment({
+  matrix,
+  original,
+  optimal,
+  maxScore,
+  seqA,
+  seqB,
+  isGlobal,
+}) {
   return (
     <div className={styles.container}>
       <div className={styles.infoBox}>
@@ -13,8 +21,26 @@ function OutputAlignment({ matrix, original, optimal, maxScore }) {
               <div className={styles.matrix}>
                 <table>
                   <tbody>
+                    <tr>
+                      <th
+                        className={styles.tableHeading}
+                        style={{ fontSize: "1rem" }}
+                      >
+                        {isGlobal ? "Global" : "Local"}
+                      </th>
+                      <th className={styles.tableHeading}> </th>
+                      {seqA.split("").map((item) => (
+                        <th className={styles.tableHeading}>{item}</th>
+                      ))}
+                    </tr>
                     {matrix.map((numList, i) => (
                       <tr key={i}>
+                        {i < seqA.length - seqB.length ? (
+                          <th className={styles.tableHeading}> </th>
+                        ) : (
+                          <th className={styles.tableHeading}>{seqB[i - 1]}</th>
+                        )}
+
                         {numList.map((num, j) => (
                           <td
                             className={styles.tableItem}

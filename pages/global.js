@@ -91,10 +91,13 @@ export default function Global() {
         />
         {optimal?.length > 0 && original.length > 0 && matrix.length > 0 ? (
           <OutputAlignment
+            isGlobal={true}
             optimal={optimal}
             original={original}
             matrix={matrix}
             maxScore={maxScore}
+            seqA={seqA}
+            seqB={seqB}
           />
         ) : (
           <></>
