@@ -9,17 +9,23 @@ function OutputAlignment({ matrix, original, optimal }) {
         <div className={styles.boxContainer}>
           <div className={styles.box}>
             <p>Alignment Matrix</p>
-            <div className={styles.matrix}></div>
+            <div className={styles.matrix}>
+              {matrix.map((item) => {
+                matrix.map((index) => {
+                  return <p style={{ fontSize: "1rem" }}>{item.index}</p>;
+                });
+              })}
+            </div>
           </div>
           <div className={styles.box}>
-            <p>Optimal Alignments</p>
+            <p style={{ marginLeft: "1rem" }}>Optimal Alignments</p>
             {original ? (
               original.map((item) => {
                 return (
                   <div className={styles.alignments}>
                     {item}
                     <br></br>
-                    {optimal[item]}
+                    {optimal}
                   </div>
                 );
               })
