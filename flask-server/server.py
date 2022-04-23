@@ -79,7 +79,7 @@ def globalAlignment(seq1, seq2, matchscore, mismatchscore, gapscore):
     for i in range(len(scorelist)):
         if (maxScore == scorelist[i]):
             bestScoreSol.append(i)
-        return arr, seq1List, seq2List, scorelist
+    return arr, seq1List, seq2List, scorelist
 
 
 #LOCAL ALIGNMNET
@@ -278,7 +278,7 @@ def globalAlignmentRoute():
     if (content_type == 'application/json'):
         json = request.json
         print("global Data",json)
-        ans = globalAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']) )
+        ans = globalAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
         return {"body":ans}
 
     return {"error": "Unable to retreive data at this moment"}
@@ -290,6 +290,7 @@ def localAlignmentRoute():
     if (content_type == 'application/json'):
         json = request.json
         print("local Data",json)
+        ans = localAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
         return json
 
     return {"error": "Unable to retreive data at this moment"}

@@ -17,7 +17,9 @@ export default function Global() {
   const [gap, setGap] = useState("");
   const [match, setMatch] = useState("");
   const [misMatch, setMisMatch] = useState("");
-
+  const [matrix, setMatrix] = useState([]);
+  const [original, setOriginal] = useState([]);
+  const [optimal, setOptimal] = useState([]);
   const submit = async () => {
     const response = await fetch("http://127.0.0.1:5000/global/", {
       // Adding method type
@@ -35,13 +37,21 @@ export default function Global() {
         "Content-type": "application/json",
       },
     });
-
     const res = await response.json();
     if (res) {
-      console.log("dataa", res);
       setData(res);
+      setMatrix(res.body[0]);
+      setOriginal(res.body[1]);
+      setOptimal(res.body[2]);
+      console.log("data", data);
+      console.log("matrix", matrix);
+      console.log("original", original);
+      console.log("optimal", optimal);
     }
   };
+  // useEffect(() => {
+  //   submit();
+  // }, []);
 
   return (
     <>
@@ -61,7 +71,11 @@ export default function Global() {
           setGap={setGap}
           submit={submit}
         />
-        <OutputAlignment />
+        <OutputAlignment
+          optimal={optimal}
+          original={original}
+          matrix={matrix}
+        />
       </div>
       <Footer />
     </>

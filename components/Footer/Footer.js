@@ -17,7 +17,7 @@ function Footer() {
           </Link>
         </div>
         <div style={{ marginTop: -1 + "rem", marginLeft: 1 + "rem" }}>
-          <p>Sahaayak Project ©{year}</p>
+          <p>The Sahaayak Project ©{year}</p>
         </div>
       </div>
     </div>
