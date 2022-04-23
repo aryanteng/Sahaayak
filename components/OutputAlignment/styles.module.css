@@ -73,7 +73,13 @@
   font-size: 0.8rem;
 }
 
-@media (max-width: 700px) {
+.tableItem:hover {
+  background-color: var(--theme);
+  color: #000 !important;
+  transition: 0.2s;
+}
+
+@media (max-width: 800px) {
   .container h1 {
     font-weight: bold;
     font-size: 1rem;

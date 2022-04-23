@@ -17,10 +17,11 @@ function OutputAlignment({ matrix, original, optimal }) {
                       <tr key={i}>
                         {numList.map((num, j) => (
                           <td
+                            className={styles.tableItem}
                             key={j}
                             style={{
-                              width: 50,
-                              height: 50,
+                              width: 65,
+                              height: 65,
                               color: "#fff",
                               border: "2px solid var(--theme)",
                               textAlign: "center",
