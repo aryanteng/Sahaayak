@@ -13,14 +13,12 @@ export default function Global() {
     const response = await fetch("http://127.0.0.1:5000/members/", {
       // Adding method type
       method: "POST",
-
       // Adding body or contents to send
       body: JSON.stringify({
         title: "foo",
         body: "bar",
         userId: 1,
       }),
-
       // Adding headers to the request
       headers: {
         "Content-type": "application/json",
