@@ -13,6 +13,8 @@ export default function ORFS() {
   //   LINK AND CONTENT PLEASE SEE OF ORFS
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   const [seq, setSeq] = useState("");
+  const [minLen, setMinLen] = useState("");
+
   const [output, setOutput] = useState([]);
   const submit = async () => {
     const response = await fetch("http://127.0.0.1:5000/orfs/", {
@@ -21,6 +23,7 @@ export default function ORFS() {
       // Adding body or contents to send
       body: JSON.stringify({
         dna: seq,
+        minLen: minLen,
       }),
       // Adding headers to the request
       headers: {
@@ -46,6 +49,8 @@ export default function ORFS() {
           setOutput={setOutput}
           submit={submit}
           isOrf={true}
+          minLen={minLen}
+          setMinLen={setMinLen}
         />
         {output.length > 0 && <OutputDNA isOrf={true} output={output} />}
       </div>

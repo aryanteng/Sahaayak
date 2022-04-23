@@ -34,7 +34,6 @@ function OutputDNA({ isOrf, output }) {
           onClick={() => {
             downloadTxtFile();
           }}
-          style={{ marginTop: isOrf ? "-2rem" : "2rem" }}
         >
           Download
         </div>

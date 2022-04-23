@@ -156,7 +156,7 @@ def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
 
 #------------------------------------------------------------------------------------------------------------------
 #Orfs
-def ORFS(dna):
+def ORFS(dna,minLen):
     reversedDna = dna[::-1]
 
     def findORF(seq):
@@ -174,8 +174,9 @@ def ORFS(dna):
         for i in startCodons:
             for j in stopcodons:
                 if i < j:
-                    orfs.append(seq[i:j + 1])
-                    break
+                    if len(seq[i:j + 1])>=minLen:
+                        orfs.append(seq[i:j + 1])
+                        break
         return orfs
 
     orfs1 = findORF(dna)
@@ -298,7 +299,8 @@ def OrfsRoute():
     content_type = request.headers.get('Content-Type')
     if (content_type == 'application/json'):
         json = request.json
-        ans = ORFS(json['dna'])
+        ans = ORFS(json['dna'],json['minLen'])
+        print("milenn",json['minLen'])
         return {"body": ans}
 
     return {"error": "Unable to retreive data at this moment"}

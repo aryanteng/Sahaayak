@@ -24,9 +24,7 @@ const useStyles = makeStyles({
     color: "var(--theme)",
   },
 });
-function InputDNA({ seq, setSeq, submit, isOrf }) {
-  const [min, setMin] = useState();
-
+function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen }) {
   const classes = useStyles();
   return (
     <div className={styles.container}>
@@ -53,9 +51,9 @@ function InputDNA({ seq, setSeq, submit, isOrf }) {
             <Select
               labelId="demo-simple-select-label"
               id="demo-simple-select"
-              value={min}
+              value={minLen}
               label="Minimum ORF Length"
-              onChange={(e) => setMin(e.target.value)}
+              onChange={(e) => setMinLen(e.target.value)}
               sx={{
                 color: "#fff",
                 paddingLeft: "0.5rem !important",
@@ -82,6 +80,7 @@ function InputDNA({ seq, setSeq, submit, isOrf }) {
 
         <div
           className={styles.btn}
+          style={{ marginTop: isOrf ? "1rem" : "2rem" }}
           onClick={() => {
             submit();
           }}
