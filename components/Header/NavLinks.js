@@ -21,9 +21,9 @@ function NavLinks() {
         <ListItem className={styles.mobileLink}>Local</ListItem>
       </Link>
 
-      <Link href="/end-free" style={{ textDecoration: "none" }}>
+      {/* <Link href="/end-free" style={{ textDecoration: "none" }}>
         <ListItem className={styles.mobileLink}>End-Free</ListItem>
-      </Link>
+      </Link> */}
       <Link href="/dna-to-protein" style={{ textDecoration: "none" }}>
         <ListItem className={styles.mobileLink}>DNA to Protein</ListItem>
       </Link>

@@ -115,7 +115,7 @@ function Header() {
               Local
             </motion.p>
           </Link>
-          <Link href="/end-free" passHref={true}>
+          {/* <Link href="/end-free" passHref={true}>
             <motion.p
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
@@ -124,7 +124,7 @@ function Header() {
             >
               End-Free
             </motion.p>
-          </Link>
+          </Link> */}
 
           <Link href="/dna-to-protein" passHref={true}>
             <motion.p
