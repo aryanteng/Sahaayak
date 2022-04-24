@@ -5,6 +5,7 @@ import styles from "../styles/Global.module.css";
 import InputAlignment from "../components/InputAlignment/InputAlignment";
 import OutputAlignment from "../components/OutputAlignment/OutputAlignment";
 import { useState } from "react";
+import Loading from "../components/Loading";
 
 export default function Local() {
   const [data, setData] = useState([{}]);
