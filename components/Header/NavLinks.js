@@ -31,7 +31,7 @@ function NavLinks() {
         <ListItem className={styles.mobileLink}>ORFs</ListItem>
       </Link>
       <Link href="/about-us" style={{ textDecoration: "none" }}>
-        <ListItem className={styles.mobileLink}>About</ListItem>
+        <ListItem className={styles.mobileLink}>About Us</ListItem>
       </Link>
     </List>
   );
