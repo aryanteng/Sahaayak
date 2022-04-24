@@ -24,7 +24,7 @@ function OutputAlignment({
                     <tr>
                       <th
                         className={styles.tableHeading}
-                        style={{ fontSize: "1rem" }}
+                        style={{ fontSize: "0.6rem" }}
                       >
                         {isGlobal ? "Global" : "Local"}
                       </th>
