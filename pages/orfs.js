@@ -24,19 +24,22 @@ export default function ORFS() {
         setError("Only A, T, C and G are valid characters!");
       }
     }
-    const response = await fetch("http://127.0.0.1:5000/orfs/", {
-      // Adding method type
-      method: "POST",
-      // Adding body or contents to send
-      body: JSON.stringify({
-        dna: seq,
-        minLen: minLen,
-      }),
-      // Adding headers to the request
-      headers: {
-        "Content-type": "application/json",
-      },
-    });
+    const response = await fetch(
+      "http://avivashishta2907.pythonanywhere.com/orfs/",
+      {
+        // Adding method type
+        method: "POST",
+        // Adding body or contents to send
+        body: JSON.stringify({
+          dna: seq,
+          minLen: minLen,
+        }),
+        // Adding headers to the request
+        headers: {
+          "Content-type": "application/json",
+        },
+      }
+    );
     const res = await response.json();
     if (res) {
       if (error.length > 0) {

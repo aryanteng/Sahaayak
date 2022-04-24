@@ -38,22 +38,25 @@ export default function Global() {
     } else if (!parseInt(misMatch)) {
       setError("Error: Mismatch value has to be an integer!");
     } else {
-      const response = await fetch("http://127.0.0.1:5000/global/", {
-        // Adding method type
-        method: "POST",
-        // Adding body or contents to send
-        body: JSON.stringify({
-          seqA: seqA,
-          seqB: seqB,
-          gap: gap,
-          misMatch: misMatch,
-          match: match,
-        }),
-        // Adding headers to the request
-        headers: {
-          "Content-type": "application/json",
-        },
-      });
+      const response = await fetch(
+        "http://avivashishta2907.pythonanywhere.com/global/",
+        {
+          // Adding method type
+          method: "POST",
+          // Adding body or contents to send
+          body: JSON.stringify({
+            seqA: seqA,
+            seqB: seqB,
+            gap: gap,
+            misMatch: misMatch,
+            match: match,
+          }),
+          // Adding headers to the request
+          headers: {
+            "Content-type": "application/json",
+          },
+        }
+      );
       const res = await response.json();
       if (res) {
         setData(res);
