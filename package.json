@@ -2,7 +2,7 @@
   "name": "sahaayak",
   "version": "0.1.0",
   "private": true,
-  "proxy": "http://127.0.0.1:5000",
+  "proxy": "http://avivashishta2907.pythonanywhere.com",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
