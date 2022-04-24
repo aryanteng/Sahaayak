@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
-function OutputDNA({ isOrf, output }) {
-  const [count, setCount] = useState("");
-
+function OutputDNA({ isOrf, output, orfCount }) {
   const downloadTxtFile = () => {
     const element = document.createElement("a");
     const file = new Blob([output], {
@@ -14,15 +12,6 @@ function OutputDNA({ isOrf, output }) {
     document.body.appendChild(element);
     element.click();
   };
-
-  useEffect(() => {
-    var num = 0;
-    output.map((item) => {
-      num += item.length;
-    });
-    setCount(num);
-  }, []);
-
   return (
     <div className={styles.container}>
       <div className={styles.infoBox}>
@@ -38,7 +27,7 @@ function OutputDNA({ isOrf, output }) {
           Download
         </div>
         {isOrf ? (
-          <p style={{ marginLeft: "1rem" }}>ORF Count: {count}</p>
+          <p style={{ marginLeft: "1rem" }}>ORF Count: {orfCount}</p>
         ) : (
           <></>
         )}

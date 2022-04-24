@@ -14,8 +14,8 @@ export default function ORFS() {
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   const [seq, setSeq] = useState("");
   const [minLen, setMinLen] = useState("");
-
   const [output, setOutput] = useState([]);
+  const [orfCount, setOrfCount] = useState();
   const submit = async () => {
     const response = await fetch("http://127.0.0.1:5000/orfs/", {
       // Adding method type
@@ -32,8 +32,10 @@ export default function ORFS() {
     });
     const res = await response.json();
     if (res) {
-      setOutput(res.body);
-      console.log("orfs", res.body);
+      setOutput(res.body.slice(0, 6));
+      setOrfCount(res.body[6]);
+      console.log("orfs", output);
+      console.log("count", orfCount);
     }
   };
 
@@ -52,7 +54,9 @@ export default function ORFS() {
           minLen={minLen}
           setMinLen={setMinLen}
         />
-        {output.length > 0 && <OutputDNA isOrf={true} output={output} />}
+        {output.length > 0 && (
+          <OutputDNA isOrf={true} output={output} orfCount={orfCount} />
+        )}
       </div>
       <Footer />
     </>
