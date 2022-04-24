@@ -22,7 +22,10 @@ export default function Local() {
   const [optimal, setOptimal] = useState([]);
   const [maxScore, setMaxScore] = useState();
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+
   const submit = async () => {
+    setIsLoading(true);
     if (seqA.length == 0 && seqB.length == 0) {
       setError("Error: Sequences cannot be empty!");
     } else if (!match) {
@@ -69,6 +72,7 @@ export default function Local() {
         console.log("original", original);
         console.log("optimal", optimal);
         console.log("max score", maxScore);
+        setIsLoading(false);
       }
     }
   };
@@ -92,7 +96,9 @@ export default function Local() {
           submit={submit}
           error={error}
         />
-        {optimal.length > 0 && original.length > 0 && matrix.length > 0 ? (
+        {isLoading ? (
+          <Loading />
+        ) : optimal.length > 0 && original.length > 0 && matrix.length > 0 ? (
           <OutputAlignment
             optimal={optimal}
             original={original}

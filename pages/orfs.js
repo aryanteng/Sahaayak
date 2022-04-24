@@ -4,6 +4,7 @@ import InputDNA from "../components/DnaComponents/InputDNA";
 import OutputDNA from "../components/DnaComponents/InputDNA/OutputDNA";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
+import Loading from "../components/Loading";
 import styles from "../styles/Global.module.css";
 
 export default function ORFS() {
@@ -18,7 +19,9 @@ export default function ORFS() {
   const [orfCount, setOrfCount] = useState();
   const [error, setError] = useState("");
   const nucleotides = ["A", "T", "C", "G"];
+  const [isLoading, setIsLoading] = useState(false);
   const submit = async () => {
+    setIsLoading(true);
     const response = await fetch(
       "http://avivashishta2907.pythonanywhere.com/orfs/",
       {
@@ -44,6 +47,7 @@ export default function ORFS() {
       setOrfCount(res.body[6]);
       console.log("orfs", output);
       console.log("count", orfCount);
+      setIsLoading(false);
     }
   };
 
@@ -63,8 +67,13 @@ export default function ORFS() {
           setMinLen={setMinLen}
           error={error}
         />
-        {output.length > 0 && error.length <= 0 && (
-          <OutputDNA isOrf={true} output={output} orfCount={orfCount} />
+        {isLoading ? (
+          <Loading />
+        ) : (
+          output.length > 0 &&
+          error.length <= 0 && (
+            <OutputDNA isOrf={true} output={output} orfCount={orfCount} />
+          )
         )}
       </div>
       <Footer />

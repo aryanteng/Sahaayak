@@ -3,6 +3,7 @@ import Define from "../components/DefineComponent/Define";
 import Footer from "../components/Footer/Footer";
 import Header from "../components/Header/Header";
 import InputAlignment from "../components/InputAlignment/InputAlignment";
+import Loading from "../components/Loading";
 import OutputAlignment from "../components/OutputAlignment/OutputAlignment";
 import styles from "../styles/Global.module.css";
 
@@ -22,7 +23,9 @@ export default function Global() {
   const [optimal, setOptimal] = useState([]);
   const [maxScore, setMaxScore] = useState();
   const [error, setError] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
   const submit = async () => {
+    setIsLoading(true);
     if (seqA.length == 0 && seqB.length == 0) {
       setError("Error: Sequences cannot be empty!");
     } else if (!match) {
@@ -69,6 +72,7 @@ export default function Global() {
         console.log("original", original);
         console.log("optimal", optimal);
         console.log("max score", maxScore);
+        setIsLoading(false);
       }
     }
   };
@@ -92,7 +96,9 @@ export default function Global() {
           submit={submit}
           error={error}
         />
-        {optimal?.length > 0 && original.length > 0 && matrix.length > 0 ? (
+        {isLoading ? (
+          <Loading />
+        ) : optimal?.length > 0 && original.length > 0 && matrix.length > 0 ? (
           <OutputAlignment
             isGlobal={true}
             optimal={optimal}
