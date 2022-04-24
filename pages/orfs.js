@@ -19,11 +19,6 @@ export default function ORFS() {
   const [error, setError] = useState("");
   const nucleotides = ["A", "T", "C", "G"];
   const submit = async () => {
-    for (let i = 0; i < seq.length; i++) {
-      if (!nucleotides.includes(setSeq[i])) {
-        setError("Only A, T, C and G are valid characters!");
-      }
-    }
     const response = await fetch(
       "http://avivashishta2907.pythonanywhere.com/orfs/",
       {
