@@ -30,7 +30,7 @@ function Header() {
         <link
           rel="icon"
           type="image/x-icon"
-          href="https://i.ibb.co/jwDZB3g/Group-25.png"
+          href="https://i.ibb.co/d0JDzG8/S-1.png"
         />
         <link rel="manifest" href="/manifest.json" />
         <meta
@@ -49,10 +49,7 @@ function Header() {
         />
         <meta name="author" content="Sahaayak" />
 
-        <meta
-          name="twitter:card"
-          content="https://i.ibb.co/jwDZB3g/Group-25.png"
-        />
+        <meta name="twitter:card" content="https://i.ibb.co/d0JDzG8/S-1.png" />
         <meta name="twitter:site" content="https://sahaayak.vercel.app/" />
         <meta name="twitter:title" content="Sahaayak" />
         <meta
@@ -61,17 +58,14 @@ function Header() {
         />
         <meta
           name="twitter:image:src"
-          content="https://i.ibb.co/jwDZB3g/Group-25.png"
+          content="https://i.ibb.co/d0JDzG8/S-1.png"
         />
         <meta name="twitter:image:alt" content="Sahaayak" />
 
         <meta property="og:url" content="https://sahaayak.vercel.app/" />
         <meta property="og:type" content="Biology" />
         <meta property="og:title" content="Sahaayak" />
-        <meta
-          property="og:image"
-          content="https://i.ibb.co/jwDZB3g/Group-25.png"
-        />
+        <meta property="og:image" content="https://i.ibb.co/d0JDzG8/S-1.png" />
         <meta
           property="og:description"
           content="A 2022 Web App for all of your Bioinformatics needs."
@@ -83,10 +77,7 @@ function Header() {
           itemProp="description"
           content="A 2022 Web App for all of your Bioinformatics needs."
         />
-        <meta
-          itemProp="image"
-          content="https://i.ibb.co/jwDZB3g/Group-25.png"
-        />
+        <meta itemProp="image" content="https://i.ibb.co/d0JDzG8/S-1.png" />
         <meta
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
@@ -135,16 +126,6 @@ function Header() {
               Local
             </motion.p>
           </Link>
-          {/* <Link href="/end-free" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.25, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              End-Free
-            </motion.p>
-          </Link> */}
 
           <Link href="/dna-to-protein" passHref={true}>
             <motion.p
@@ -164,6 +145,16 @@ function Header() {
               className={styles.link}
             >
               ORFs
+            </motion.p>
+          </Link>
+          <Link href="/about-us" passHref={true}>
+            <motion.p
+              initial={{ x: 50, opacity: 0 }}
+              whileInView={{ x: 0, opacity: 1 }}
+              transition={{ delay: 2, duration: 0.5, type: "spring" }}
+              className={styles.link}
+            >
+              About
             </motion.p>
           </Link>
         </div>
