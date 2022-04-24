@@ -29,8 +29,10 @@ function OutputAlignment({
                         {isGlobal ? "Global" : "Local"}
                       </th>
                       <th className={styles.tableHeading}> </th>
-                      {seqA.split("").map((item) => (
-                        <th className={styles.tableHeading}>{item}</th>
+                      {seqA.split("").map((item, i) => (
+                        <th className={styles.tableHeading} key={i}>
+                          {item}
+                        </th>
                       ))}
                     </tr>
                     {matrix.map((numList, i) => (
