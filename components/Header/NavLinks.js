@@ -30,6 +30,9 @@ function NavLinks() {
       <Link href="/orfs" style={{ textDecoration: "none" }}>
         <ListItem className={styles.mobileLink}>ORFs</ListItem>
       </Link>
+      <Link href="/about-us" style={{ textDecoration: "none" }}>
+        <ListItem className={styles.mobileLink}>About</ListItem>
+      </Link>
     </List>
   );
 }
