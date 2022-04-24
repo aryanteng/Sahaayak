@@ -24,7 +24,7 @@ const useStyles = makeStyles({
     color: "var(--theme)",
   },
 });
-function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen }) {
+function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen, error }) {
   const classes = useStyles();
   return (
     <div className={styles.container}>
@@ -33,7 +33,7 @@ function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen }) {
         <textarea
           value={seq}
           onChange={(e) => {
-            setSeq(e.target.value);
+            setSeq(e.target.value.toUpperCase());
           }}
           className={styles.input}
         />
@@ -116,6 +116,11 @@ function InputDNA({ seq, setSeq, submit, isOrf, minLen, setMinLen }) {
         >
           Submit
         </div>
+        {error ? (
+          <p style={{ fontSize: "1rem", color: "var(--theme)" }}>{error}</p>
+        ) : (
+          ""
+        )}
       </div>
       <img className={styles.img} src="assets/Flask.svg" width="150"></img>
     </div>

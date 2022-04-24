@@ -7,7 +7,7 @@ import Header from "../components/Header/Header";
 import styles from "../styles/Global.module.css";
 
 export default function ORFS() {
-  const topic = "ORFS";
+  const topic = "ORFs";
   const definition =
     "An open reading frame is a portion of a DNA molecule that, when translated into amino acids, contains no stop codons.The genetic code reads DNA sequences in groups of three base pairs, which means that a double-stranded DNA molecule can read in any of six possible reading frames--three in the forward direction and three in the reverse. A long open reading frame is likely part of a gene.";
   //   LINK AND CONTENT PLEASE SEE OF ORFS
@@ -16,7 +16,14 @@ export default function ORFS() {
   const [minLen, setMinLen] = useState("");
   const [output, setOutput] = useState([]);
   const [orfCount, setOrfCount] = useState();
+  const [error, setError] = useState("");
+  const nucleotides = ["A", "T", "C", "G"];
   const submit = async () => {
+    for (let i = 0; i < seq.length; i++) {
+      if (!nucleotides.includes(setSeq[i])) {
+        setError("Only A, T, C and G are valid characters!");
+      }
+    }
     const response = await fetch("http://127.0.0.1:5000/orfs/", {
       // Adding method type
       method: "POST",
@@ -32,6 +39,9 @@ export default function ORFS() {
     });
     const res = await response.json();
     if (res) {
+      if (error.length > 0) {
+        setError("");
+      }
       setOutput(res.body.slice(0, 6));
       setOrfCount(res.body[6]);
       console.log("orfs", output);
@@ -53,8 +63,9 @@ export default function ORFS() {
           isOrf={true}
           minLen={minLen}
           setMinLen={setMinLen}
+          error={error}
         />
-        {output.length > 0 && (
+        {output.length > 0 && error.length <= 0 && (
           <OutputDNA isOrf={true} output={output} orfCount={orfCount} />
         )}
       </div>

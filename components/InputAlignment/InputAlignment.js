@@ -25,7 +25,7 @@ function InputAlignment({
             className={styles.input}
             value={seqA}
             onChange={(e) => {
-              setSeqA(e.target.value);
+              setSeqA(e.target.value.toUpperCase());
             }}
           ></input>
         </div>
@@ -35,7 +35,7 @@ function InputAlignment({
             className={styles.input}
             value={seqB}
             onChange={(e) => {
-              setSeqB(e.target.value);
+              setSeqB(e.target.value.toUpperCase());
             }}
           ></input>
         </div>

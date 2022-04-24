@@ -13,7 +13,14 @@ export default function DNA_To_Protein() {
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   const [seq, setSeq] = useState("");
   const [output, setOutput] = useState([]);
+  const [error, setError] = useState("");
+  const nucleotides = ["A", "T", "C", "G"];
   const submit = async () => {
+    for (let i = 0; i < seq.length; i++) {
+      if (!nucleotides.includes(setSeq[i])) {
+        setError("Only A, T, C and G are valid characters!");
+      }
+    }
     const response = await fetch("http://127.0.0.1:5000/dna-to-protein/", {
       // Adding method type
       method: "POST",
@@ -28,6 +35,9 @@ export default function DNA_To_Protein() {
     });
     const res = await response.json();
     if (res) {
+      if (error.length > 0) {
+        setError("");
+      }
       setOutput(res.body);
       console.log("dna-protein", res.body);
     }
@@ -44,8 +54,11 @@ export default function DNA_To_Protein() {
           submit={submit}
           output={output}
           setOutput={setOutput}
+          error={error}
         />
-        {output.length > 0 && <OutputDNA output={output} />}
+        {output.length > 0 && error.length <= 1 && (
+          <OutputDNA output={output} />
+        )}
       </div>
       <Footer />
     </>
