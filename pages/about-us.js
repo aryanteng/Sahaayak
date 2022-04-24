@@ -4,7 +4,7 @@ import Header from "../components/Header/Header";
 import styles from "../styles/Home.module.css";
 
 export default function AboutUs() {
-  const developerArray = [
+  const creatorArray = [
     {
       id: 1,
       imgSrc: "https://i.ibb.co/myvq6GR/aryan.jpg",
@@ -17,22 +17,20 @@ export default function AboutUs() {
       name: "Avi Vashishta",
       email: "avi20500@iiitd.ac.in",
     },
-  ];
-  const creatorArray = [
     {
-      id: 1,
+      id: 3,
       imgSrc: "https://i.ibb.co/zsxFccd/mohit.jpg",
       name: "Mohit Bansal",
       email: "mohit20526@iiitd.ac.in",
     },
     {
-      id: 2,
+      id: 4,
       imgSrc: "https://i.ibb.co/ZzX7hxD/nik.jpg",
       name: "Nikhil Gupta",
       email: "nikhil20530@iiitd.ac.in",
     },
     {
-      id: 3,
+      id: 5,
       imgSrc: "https://i.ibb.co/4NXnCf2/vishesh.jpg",
       name: "Vishesh Jain",
       email: "vishesh20550@iiitd.ac.in",
@@ -54,18 +52,7 @@ export default function AboutUs() {
         </h3>
       </div>
       <div className={styles.AboutContainer} style={{ marginTop: "2rem" }}>
-        <h1>Designed And Developed By</h1>
-        {developerArray.map((item) => {
-          return (
-            <CreatorCard
-              key={item.id}
-              imgSrc={item.imgSrc}
-              name={item.name}
-              email={item.email}
-            />
-          );
-        })}
-        <h1>Algorithms Written By</h1>
+        <h1>The Creators</h1>
         {creatorArray.map((item) => {
           return (
             <CreatorCard
