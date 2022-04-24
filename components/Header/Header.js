@@ -87,6 +87,10 @@ function Header() {
           itemProp="image"
           content="https://i.ibb.co/jwDZB3g/Group-25.png"
         />
+        <meta
+          httpEquiv="Content-Security-Policy"
+          content="upgrade-insecure-requests"
+        ></meta>
       </Head>
       <Link href="/">
         <motion.h1
