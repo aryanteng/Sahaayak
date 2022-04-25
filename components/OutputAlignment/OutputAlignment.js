@@ -15,7 +15,10 @@ function OutputAlignment({
       <div className={styles.infoBox}>
         <h1>Output</h1>
         <div className={styles.boxContainer}>
-          <div className={styles.flexDiv}>
+          <div
+            className={styles.flexDiv}
+            style={{ flexDirection: seqA.length >= 10 ? "column" : "row" }}
+          >
             <div className={styles.box}>
               <p style={{ marginLeft: "1rem" }}>Alignment Matrix</p>
               <div className={styles.matrix}>
@@ -37,11 +40,7 @@ function OutputAlignment({
                     </tr>
                     {matrix.map((numList, i) => (
                       <tr key={i}>
-                        {i < seqA.length - seqB.length ? (
-                          <th className={styles.tableHeading}> </th>
-                        ) : (
-                          <th className={styles.tableHeading}>{seqB[i - 1]}</th>
-                        )}
+                        <th className={styles.tableHeading}>{seqB[i - 1]}</th>
 
                         {numList.map((num, j) => (
                           <td
@@ -64,11 +63,14 @@ function OutputAlignment({
                   </tbody>
                 </table>
               </div>
-              <p style={{ marginLeft: "1rem", marginTop: "-1rem" }}>
+              <p style={{ marginLeft: "1rem", marginTop: "1rem" }}>
                 Optimal Alignment Score : {maxScore}
               </p>
             </div>
-            <div className={styles.box2} style={{ width: "50%" }}>
+            <div
+              className={styles.box2}
+              style={{ width: "50%", margin: seqA.length >= 10 && "1rem" }}
+            >
               <p className={styles.para}>Optimal Alignments</p>
               {original ? (
                 original.map((item, index) => {
@@ -85,7 +87,12 @@ function OutputAlignment({
               )}
             </div>
           </div>
-          <img className={styles.img} src="assets/Output.svg" width="150"></img>
+          <img
+            className={styles.img}
+            src="assets/Output.svg"
+            width="150"
+            style={{ display: seqA.length >= 10 && "none" }}
+          ></img>
         </div>
       </div>
     </div>

@@ -59,6 +59,10 @@
   padding: 1rem;
   margin-top: 1rem;
   margin-bottom: 1rem;
+  max-width: 100% !important;
+  max-height: 70vh !important;
+  overflow-x: auto;
+  overflow-y: auto;
 }
 
 .alignments {
@@ -131,5 +135,9 @@
   }
   .para {
     margin-left: 10%;
+  }
+  .matrix {
+    max-width: 80vw !important;
+    overflow-x: auto;
   }
 }
