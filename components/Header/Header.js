@@ -93,77 +93,74 @@ function Header() {
           Sahaayak
         </motion.h1>
       </Link>
-      {!drawer && (
-        <div className={styles.links}>
-          <div className={styles.buttonElement}></div>
-          <Link href="/" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.25, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              Home
-            </motion.p>
-          </Link>
-          <Link href="/global" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              Global
-            </motion.p>
-          </Link>
-          <Link href="/local" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              Local
-            </motion.p>
-          </Link>
+      {/* {!drawer && ( */}
+      <div className={styles.links}>
+        <div className={styles.buttonElement}></div>
+        <Link href="/" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.25, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            Home
+          </motion.p>
+        </Link>
+        <Link href="/global" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            Global
+          </motion.p>
+        </Link>
+        <Link href="/local" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            Local
+          </motion.p>
+        </Link>
 
-          <Link href="/dna-to-protein" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              DNA to Protein
-            </motion.p>
-          </Link>
-          <Link href="/orfs" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 1.75, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              ORFs
-            </motion.p>
-          </Link>
-          <Link href="/about-us" passHref={true}>
-            <motion.p
-              initial={{ x: 50, opacity: 0 }}
-              whileInView={{ x: 0, opacity: 1 }}
-              transition={{ delay: 2, duration: 0.5, type: "spring" }}
-              className={styles.link}
-            >
-              About
-            </motion.p>
-          </Link>
-        </div>
-      )}
-      {drawer && (
-        <div className={styles.links} style={{ marginRight: "3rem" }}>
-          <DrawerComponent />
-        </div>
-      )}
+        <Link href="/dna-to-protein" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            DNA to Protein
+          </motion.p>
+        </Link>
+        <Link href="/orfs" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1.75, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            ORFs
+          </motion.p>
+        </Link>
+        <Link href="/about-us" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 2, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            About
+          </motion.p>
+        </Link>
+      </div>
+      {/* )} */}
+      {/* {drawer && ( */}
+      <DrawerComponent />
     </div>
   );
 }

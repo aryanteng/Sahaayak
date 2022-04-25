@@ -52,7 +52,7 @@ export default function AboutUs() {
         </h3>
       </div>
       <div className={styles.AboutContainer} style={{ marginTop: "2rem" }}>
-        <h1>The Creators</h1>
+        <h1>Created By</h1>
         {creatorArray.map((item) => {
           return (
             <CreatorCard

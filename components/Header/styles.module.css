@@ -44,9 +44,16 @@
 .mobileLink {
   color: var(--white);
   display: flex;
+  margin-bottom: 0.5rem;
   align-items: center;
   text-decoration: none;
   font-family: "Poppins", sans-serif !important;
+}
+
+.mobileLink:hover {
+  background-color: var(--white);
+  color: var(--theme);
+  transition: 0.2s all;
 }
 
 .profileButton {
@@ -58,10 +65,14 @@
   color: var(--white);
 }
 
+.mobileNavbar {
+  display: none;
+}
+
 @media (max-width: 1000px) {
   .navbar h1 {
-    font-size: 1.5rem;
-    margin-bottom: 0;
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
   }
   .navbar p {
     font-size: 0.8rem;
@@ -69,13 +80,20 @@
   }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .navbar h1 {
-    font-size: 1.3rem;
-    margin-bottom: 0;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
   .navbar p {
     font-size: 0.6rem;
     margin-bottom: 0;
+  }
+  .links {
+    display: none;
+  }
+  .mobileNavbar {
+    display: flex;
+    margin-right: 3rem;
   }
 }

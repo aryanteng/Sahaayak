@@ -5,6 +5,7 @@ import Drawer from "@material-ui/core/Drawer";
 import Button from "@material-ui/core/Button";
 import MenuIcon from "@material-ui/icons/Menu";
 import NavLinks from "./NavLinks";
+import styles from "./styles.module.css";
 
 const useStyles = makeStyles({
   list: {
@@ -53,16 +54,18 @@ export default function DrawerComponent() {
   );
 
   return (
-    <div>
+    <div className={styles.mobileNavbar}>
       {["right"].map((anchor) => (
         <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>
+          <Button
+            onClick={toggleDrawer(anchor, true)}
+            style={{ marginTop: "0.8rem" }}
+          >
             <MenuIcon
               fontSize="large"
               style={{
                 color: "var(--white)",
-                fontSize: "1.5rem",
-                marginTop: "0.8rem",
+                fontSize: "2rem",
               }}
             />
           </Button>
