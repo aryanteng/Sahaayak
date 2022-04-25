@@ -28,6 +28,12 @@ export default function Global() {
     setIsLoading(true);
     if (seqA.length == 0 && seqB.length == 0) {
       setError("Error: Sequences cannot be empty!");
+    } else if (seqA.length == 0) {
+      setError("Error: Sequence A cannot be empty!");
+    } else if (seqB.length == 0) {
+      setError("Error: Sequence B cannot be empty!");
+    } else if (!match && !gap && !misMatch) {
+      setError("Error: Please input your scores!");
     } else if (!match) {
       setError("Error: Match score cannot be empty!");
     } else if (!gap) {
@@ -41,6 +47,7 @@ export default function Global() {
     } else if (!parseInt(misMatch)) {
       setError("Error: Mismatch value has to be an integer!");
     } else {
+      setError("");
       const response = await fetch(
         "http://avivashishta2907.pythonanywhere.com/global/",
         {
@@ -96,7 +103,7 @@ export default function Global() {
           submit={submit}
           error={error}
         />
-        {isLoading ? (
+        {isLoading && !error ? (
           <Loading />
         ) : optimal?.length > 0 && original.length > 0 && matrix.length > 0 ? (
           <OutputAlignment
