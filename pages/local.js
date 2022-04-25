@@ -29,19 +29,26 @@ export default function Local() {
     setIsLoading(true);
     if (seqA.length == 0 && seqB.length == 0) {
       setError("Error: Sequences cannot be empty!");
+    } else if (seqA.length == 0) {
+      setError("Error: Sequence A cannot be empty!");
+    } else if (seqB.length == 0) {
+      setError("Error: Sequence B cannot be empty!");
+    } else if (!match && !gap && !misMatch) {
+      setError("Error: Please input your scores!");
     } else if (!match) {
       setError("Error: Match score cannot be empty!");
-    } else if (!gap) {
-      setError("Error: Gap penalty cannot be empty!");
-    } else if (!misMatch) {
-      setError("Error: Mismatch penalty cannot be empty!");
     } else if (!parseInt(match)) {
       setError("Error: Match value has to be an integer!");
+    } else if (!gap) {
+      setError("Error: Gap penalty cannot be empty!");
     } else if (!parseInt(gap)) {
       setError("Error: Gap value has to be an integer!");
+    } else if (!misMatch) {
+      setError("Error: Mismatch penalty cannot be empty!");
     } else if (!parseInt(misMatch)) {
       setError("Error: Mismatch value has to be an integer!");
     } else {
+      setError("");
       const response = await fetch(
         "http://avivashishta2907.pythonanywhere.com/local/",
         {

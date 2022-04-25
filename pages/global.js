@@ -36,14 +36,14 @@ export default function Global() {
       setError("Error: Please input your scores!");
     } else if (!match) {
       setError("Error: Match score cannot be empty!");
-    } else if (!gap) {
-      setError("Error: Gap penalty cannot be empty!");
-    } else if (!misMatch) {
-      setError("Error: Mismatch penalty cannot be empty!");
     } else if (!parseInt(match)) {
       setError("Error: Match value has to be an integer!");
+    } else if (!gap) {
+      setError("Error: Gap penalty cannot be empty!");
     } else if (!parseInt(gap)) {
       setError("Error: Gap value has to be an integer!");
+    } else if (!misMatch) {
+      setError("Error: Mismatch penalty cannot be empty!");
     } else if (!parseInt(misMatch)) {
       setError("Error: Mismatch value has to be an integer!");
     } else {
