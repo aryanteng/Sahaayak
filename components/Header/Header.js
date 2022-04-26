@@ -74,14 +74,14 @@ function Header() {
         />
         <meta
           property="og:description"
-          content="A 2022 Web App for all of your Bioinformatics needs."
+          content="A one-stop solution for your bioinformatic problems."
         />
         <meta property="og:site_name" content="Sahaayak" />
 
         <meta itemProp="name" content="Sahaayak" />
         <meta
           itemProp="description"
-          content="A 2022 Web App for all of your Bioinformatics needs."
+          content="A one-stop solution for your bioinformatic problems."
         />
         <meta
           itemProp="image"
