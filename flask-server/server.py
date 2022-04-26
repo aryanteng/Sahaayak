@@ -1,5 +1,6 @@
 from flask import Flask,request
 from flask_cors import CORS
+import math
 
 app = Flask(__name__)
 cors = CORS(app, resources={r"/*": {"origins": "*"}})
@@ -8,7 +9,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #------------------------------------------------------------------------------------------------------------------
 
 #Global Alignment
-import math
+
 def globalAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
     cols, rows = len(sequence1) + 1, len(sequence2) + 1
     scorelist = []

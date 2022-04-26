@@ -15,9 +15,9 @@ export default function Local() {
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1433&cnt=1";
   const [seqA, setSeqA] = useState("");
   const [seqB, setSeqB] = useState("");
-  const [gap, setGap] = useState("");
-  const [match, setMatch] = useState("");
-  const [misMatch, setMisMatch] = useState("");
+  const [gap, setGap] = useState("-2");
+  const [match, setMatch] = useState("1");
+  const [misMatch, setMisMatch] = useState("-1");
   const [matrix, setMatrix] = useState([]);
   const [original, setOriginal] = useState([]);
   const [optimal, setOptimal] = useState([]);
