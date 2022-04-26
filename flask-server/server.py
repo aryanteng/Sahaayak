@@ -8,6 +8,7 @@ cors = CORS(app, resources={r"/*": {"origins": "*"}})
 #------------------------------------------------------------------------------------------------------------------
 
 #Global Alignment
+import math
 def globalAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
     cols, rows = len(sequence1) + 1, len(sequence2) + 1
     scorelist = []
@@ -63,7 +64,7 @@ def globalAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
     bestScoreSol = []
     optSeq1 = []
     optSeq2 = []
-    maxScore = -1
+    maxScore = -math.inf
     for i in range(len(scorelist)):
         if maxScore < scorelist[i]:
             maxScore = scorelist[i]
@@ -78,6 +79,7 @@ def globalAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
 
 #LOCAL ALIGNMNET
 #------------------------------------------------------------------------------------------------------------------
+import math
 def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
     scorelist = []
     seq1List = []
@@ -139,7 +141,7 @@ def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
     for i in range(len(x)):
         optimalSequence("", "", x[i], y[i], 0)
     bestScoreSol = []
-    maxScore = -1
+    maxScore = -math.inf
     optSeq1 = []
     optSeq2 = []
     for i in range(len(scorelist)):
@@ -153,7 +155,6 @@ def localAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
         optSeq2.append(seq2List[i])
 
     return arr, optSeq1, optSeq2, maxScore
-
 #------------------------------------------------------------------------------------------------------------------
 #Orfs
 def ORFS(dna, threshold):
