@@ -111,7 +111,7 @@
   }
 
   .boxContainer {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: center;
     justify-content: center;
   }
@@ -129,7 +129,7 @@
     margin-left: auto;
   }
   .flexDiv {
-    flex-direction: column;
+    flex-direction: column !important;
     justify-content: center;
     align-items: center;
   }
