@@ -107,7 +107,7 @@ export default function EndFree() {
           <Loading />
         ) : optimal?.length > 0 && original.length > 0 && matrix.length > 0 ? (
           <OutputAlignment
-            isGlobal={true}
+            isGlobal={false}
             optimal={optimal}
             original={original}
             matrix={matrix}
