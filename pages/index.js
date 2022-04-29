@@ -19,6 +19,11 @@ export default function Home() {
       link: "/local",
     },
     {
+      heading: "End Free Alignment",
+      desc: "The central dogma of molecular biology explains the flow of genetic information, from DNA to RNA, to make a functional product, a protein.<br/> <br/>The central dogma suggests that DNA contains the information needed to make all of our proteins, and that RNA is a messenger that carries this information to the ribosomes.The ribosomes serve as factories in the cell where the information is ‘translated’ from a code into the functional product. The nucleotide sequence encoding a polypeptide from its start codon to its stop codon, is referred as CoDing Sequence(CDS) pending on the biological system (eukaryote or prokaryote) translation mechanistic is slightly different. <br/> <br/>This needs to be considered when designing gene expression vectors.The process by which the DNA instructions are converted into the functional product is called gene expression.",
+      link: "/end-free",
+    },
+    {
       heading: "Converting DNA to Protein",
       desc: "The central dogma of molecular biology explains the flow of genetic information, from DNA to RNA, to make a functional product, a protein.<br/> <br/>The central dogma suggests that DNA contains the information needed to make all of our proteins, and that RNA is a messenger that carries this information to the ribosomes.The ribosomes serve as factories in the cell where the information is ‘translated’ from a code into the functional product. The nucleotide sequence encoding a polypeptide from its start codon to its stop codon, is referred as CoDing Sequence(CDS) pending on the biological system (eukaryote or prokaryote) translation mechanistic is slightly different. <br/> <br/>This needs to be considered when designing gene expression vectors.The process by which the DNA instructions are converted into the functional product is called gene expression.",
       link: "/dna-to-protein",
