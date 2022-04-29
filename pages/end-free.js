@@ -10,7 +10,7 @@ import styles from "../styles/Global.module.css";
 export default function EndFree() {
   const topic = "End-Free Alignment";
   const definition =
-    "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
+    "End-Free Alignment is used to find overlap between two or more sequences i., alignment of start of one sequence to end of other. It is used in building genome fragements out of shorter sequencing data.";
   const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
   const [data, setData] = useState([{}]);
   const [seqA, setSeqA] = useState("");
