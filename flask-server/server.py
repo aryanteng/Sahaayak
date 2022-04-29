@@ -246,6 +246,106 @@ def getProtein(dna):
 
 
 
+# END-FREE 
+def endFreeAlignment(sequence1, sequence2, matchScore, mismatchScore, gapScore):
+    scorelist = []
+    seq1List = []
+    seq2List = []
+    cols, rows = len(sequence1) + 1, len(sequence2) + 1
+    arr = [[0 for i in range(cols)] for j in range(rows)]
+    for i in range(1, len(sequence2) + 1):
+        for j in range(1, len(sequence1) + 1):
+            if (sequence2[i - 1] != sequence1[j - 1]):
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + mismatchScore)
+            else:
+                arr[i][j] = max(arr[i][j - 1] + gapScore, arr[i - 1][j] + gapScore, arr[i - 1][j - 1] + matchScore)
+    maxElement = -math.inf
+    x = []
+    y = []
+    for i in range(1, len(sequence2) + 1):
+        if arr[i][cols - 1] == maxElement:
+            x.append(i)
+            y.append(cols - 1)
+        elif arr[i][cols - 1] > maxElement:
+            x.clear()
+            y.clear()
+            maxElement = arr[i][cols - 1]
+            x.append(i)
+            y.append(cols - 1)
+    for i in range(1, len(sequence1) + 1):
+        if arr[rows - 1][i] == maxElement:
+            x.append(rows - 1)
+            y.append(i)
+        elif arr[rows - 1][i] > maxElement:
+            x.clear()
+            y.clear()
+            maxElement = arr[rows - 1][i]
+            x.append(rows - 1)
+            y.append(i)
+
+    def optimalSequence(solSeq1, solSeq2, x, y, score):
+        if x < 0 or y < 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
+            scorelist.append(score)
+            return
+        if x == 0 and y == 0:
+            seq1List.append(solSeq1)
+            seq2List.append(solSeq2)
+            scorelist.append(score)
+            return
+        elif x == 0:
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+            return
+        elif y == 0:
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+            return
+        fromLeft = arr[x][y - 1]
+        fromUp = arr[x - 1][y]
+        ifFromGap = arr[x][y] - gapScore
+
+        if sequence2[x - 1] == sequence1[y - 1]:
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + matchScore)
+        else:
+            optimalSequence(sequence1[y - 1] + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y - 1, score + mismatchScore)
+        if ifFromGap == fromUp:
+            optimalSequence("-" + solSeq1, sequence2[x - 1] + solSeq2, x - 1, y, score + gapScore)
+        if ifFromGap == fromLeft:
+            optimalSequence(sequence1[y - 1] + solSeq1, "-" + solSeq2, x, y - 1, score + gapScore)
+
+    for i in range(len(x)):
+        optimalSequence("", "", x[i], y[i], 0)
+    bestScoreSol = []
+    maxScore = -math.inf
+    optSeq1 = []
+    optSeq2 = []
+    for i in range(len(scorelist)):
+        if maxScore < scorelist[i]:
+            maxScore = scorelist[i]
+    for i in range(len(scorelist)):
+        if maxScore == scorelist[i]:
+            bestScoreSol.append(i)
+    for i in bestScoreSol:
+        optSeq1.append(seq1List[i])
+        optSeq2.append(seq2List[i])
+    print(optSeq1)
+    print(optSeq2)
+    for i in range(len(optSeq1)):
+        if sequence2 not in optSeq2[i]:
+            j = 0
+            while optSeq2[i][j] != sequence2[0]:
+                j += 1
+            j = len(optSeq2) - j
+            optSeq2[i] += sequence2[j:]
+            optSeq1[i] += "-" * len(sequence2[j:])
+        if sequence1 not in optSeq1[i]:
+            j = 0
+            while optSeq1[i][j] != sequence1[0]:
+                j += 1
+            j = len(optSeq1) - j
+            optSeq1[i] += sequence1[j:]
+            optSeq2[i] += "-" * len(sequence1[j:])
+    return arr, optSeq1, optSeq2, maxScore
 #------------------------------------------------------------------------------------------------------------------
 # API ROUTE
 @app.route('/members/', methods=['POST'])
@@ -264,6 +364,16 @@ def globalAlignmentRoute():
     if (content_type == 'application/json'):
         json = request.json
         ans = globalAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
+        return {"body":ans}
+
+    return {"error": "Unable to retreive data at this moment"}
+
+@app.route('/end-free/', methods=['POST'])
+def endFreeAlignmentRoute():
+    content_type = request.headers.get('Content-Type')
+    if (content_type == 'application/json'):
+        json = request.json
+        ans = endFreeAlignment(json['seqA'], json['seqB'], int(json['match']), int(json['misMatch']),int(json['gap']))
         return {"body":ans}
 
     return {"error": "Unable to retreive data at this moment"}

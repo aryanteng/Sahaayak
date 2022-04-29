@@ -119,7 +119,7 @@ function Header() {
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
+            transition={{ delay: 0.5, duration: 0.5, type: "spring" }}
             className={styles.link}
           >
             Global
@@ -129,10 +129,21 @@ function Header() {
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.0, duration: 0.5, type: "spring" }}
+            transition={{ delay: 0.75, duration: 0.5, type: "spring" }}
             className={styles.link}
           >
             Local
+          </motion.p>
+        </Link>
+
+        <Link href="/end-free" passHref={true}>
+          <motion.p
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ delay: 1, duration: 0.5, type: "spring" }}
+            className={styles.link}
+          >
+            End Free
           </motion.p>
         </Link>
 
@@ -140,7 +151,7 @@ function Header() {
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
+            transition={{ delay: 1.25, duration: 0.5, type: "spring" }}
             className={styles.link}
           >
             DNA to Protein
@@ -150,22 +161,22 @@ function Header() {
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 1.75, duration: 0.5, type: "spring" }}
+            transition={{ delay: 1.5, duration: 0.5, type: "spring" }}
             className={styles.link}
           >
             ORFs
           </motion.p>
         </Link>
-        <Link href="/about-us" passHref={true}>
+        {/* <Link href="/about-us" passHref={true}>
           <motion.p
             initial={{ x: 50, opacity: 0 }}
             whileInView={{ x: 0, opacity: 1 }}
-            transition={{ delay: 2, duration: 0.5, type: "spring" }}
+            transition={{ delay: 1.75, duration: 0.5, type: "spring" }}
             className={styles.link}
           >
             About
           </motion.p>
-        </Link>
+        </Link> */}
       </div>
       {/* )} */}
       {/* {drawer && ( */}
