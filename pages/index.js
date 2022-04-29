@@ -15,7 +15,7 @@ export default function Home() {
     },
     {
       heading: "Local Alignment",
-      desc: "Sequences which are suspected to have similarity or even dissimilar sequences can be compared with local alignment method. It finds local regions with high level of similarity.These two methods of alignments are defined by different algorithms, which use scoring matrices to align the two different series of characters or patterns (sequences). <br/> <br/>The two different alignment methods are mostly defined by Dynamic programming approach for  aligning two different sequences.",
+      desc: "Sequences which are suspected to have similarity or even dissimilar sequences can be compared with local alignment method. It finds local regions with high level of similarity. This requires a special dynamic programming algorithm known as the  Smith–Waterman algorithm, which use scoring matrices to align the two different series of characters or patterns(sequences).",
       link: "/local",
     },
     {
