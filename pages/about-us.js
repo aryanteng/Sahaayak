@@ -50,9 +50,9 @@ export default function AboutUs() {
           available for these tools are not at all user-friendly and have a
           displeasing user interface. It took us hours to find all the different
           tools and even longer to get the solutions! We found no site on the
-          internet providing all these tools at one place. The websites are not
-          at all responsive and there is no proper navigation from one tool to
-          another. <br />
+          internet providing all these tools at one place. The websites
+          providing such tools are not at all responsive and there is no proper
+          navigation from one tool to another. <br />
           <br />
           It was then when we decided to solve this problem by creating an
           all-in-one tool for biology students so that they do not have to face
