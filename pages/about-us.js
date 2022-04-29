@@ -42,13 +42,21 @@ export default function AboutUs() {
       <div className={styles.AboutContainer}>
         <h1>About The Project</h1>
         <h3>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          As Bioinformatics&rsquo; students ourselves, we faced several
+          challenges while trying to find solutions to our problems. We realised
+          how difficult it was to find the correct tools for operations such as
+          Global, Local &amp; End-Free Alignments, and even some basic tools
+          such as DNA to Protein Convertor, and ORF Finder. The websites
+          available for these tools are not at all user-friendly and have a
+          displeasing user interface. It took us hours to find all the different
+          tools and even longer to get the solutions! We found no site on the
+          internet providing all these tools at one place. The websites are not
+          at all responsive and there is no proper navigation from one tool to
+          another. It was then when we decided to solve this problem by creating
+          an all-in-one tool for biology students so that they do not have to
+          face the same issues. Our site is easy to use and navigate, has a fun
+          user interface, works across multiple devices and screen-widths and is
+          made using the latest Web Development Technologies.
         </h3>
       </div>
       <div className={styles.AboutContainer} style={{ marginTop: "2rem" }}>
