@@ -113,6 +113,7 @@ export default function EndFree() {
             maxScore={maxScore}
             seqA={seqA}
             seqB={seqB}
+            isEndFree={true}
           />
         ) : (
           <></>

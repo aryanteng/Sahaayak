@@ -9,6 +9,7 @@ function OutputAlignment({
   seqA,
   seqB,
   isGlobal,
+  isEndFree,
 }) {
   return (
     <div className={styles.container}>
@@ -63,9 +64,11 @@ function OutputAlignment({
                   </tbody>
                 </table>
               </div>
-              <p style={{ marginLeft: "1rem", marginTop: "1rem" }}>
-                Optimal Alignment Score : {maxScore}
-              </p>
+              {!isEndFree && (
+                <p style={{ marginLeft: "1rem", marginTop: "1rem" }}>
+                  Optimal Alignment Score : {maxScore}
+                </p>
+              )}
             </div>
             <div
               className={styles.box2}
