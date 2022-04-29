@@ -52,11 +52,13 @@ export default function AboutUs() {
           tools and even longer to get the solutions! We found no site on the
           internet providing all these tools at one place. The websites are not
           at all responsive and there is no proper navigation from one tool to
-          another. It was then when we decided to solve this problem by creating
-          an all-in-one tool for biology students so that they do not have to
-          face the same issues. Our site is easy to use and navigate, has a fun
-          user interface, works across multiple devices and screen-widths and is
-          made using the latest Web Development Technologies.
+          another. <br />
+          <br />
+          It was then when we decided to solve this problem by creating an
+          all-in-one tool for biology students so that they do not have to face
+          the same issues. Our site is easy to use and navigate, has a fun user
+          interface, works across multiple devices and screen-widths and is made
+          using the latest Web Development Technologies.
         </h3>
       </div>
       <div className={styles.AboutContainer} style={{ marginTop: "2rem" }}>

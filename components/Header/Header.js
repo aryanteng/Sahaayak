@@ -20,8 +20,6 @@ function Header() {
     if (hover) {
       var cursor = document.getElementById("cursor");
       var cursor2 = document.getElementById("cursor2");
-      var blackCursor = document.getElementById("black-cursor");
-      var blackCursor2 = document.getElementById("black-cursor2");
       document.body.addEventListener("mousemove", function (e) {
         (cursor.style.border = "2px solid #000 "),
           (cursor2.style.backgroundColor = "#000");
@@ -29,8 +27,6 @@ function Header() {
     } else {
       var cursor = document.getElementById("cursor");
       var cursor2 = document.getElementById("cursor2");
-      var blackCursor = document.getElementById("black-cursor");
-      var blackCursor2 = document.getElementById("black-cursor2");
       document.body.addEventListener("mousemove", function (e) {
         (cursor.style.border = "2px solid var(--theme)"),
           (cursor2.style.backgroundColor = "var(--theme)");
