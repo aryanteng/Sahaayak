@@ -101,6 +101,7 @@ export default function EndFree() {
           setGap={setGap}
           submit={submit}
           error={error}
+          isEndFree={true}
         />
         {isLoading && !error ? (
           <Loading />

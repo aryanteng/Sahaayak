@@ -30,7 +30,7 @@ function OutputAlignment({
                         className={styles.tableHeading}
                         style={{ fontSize: "0.6rem" }}
                       >
-                        {isGlobal ? "Global" : "Local"}
+                        {isGlobal ? "Global" : isEndFree ? "End-Free" : "Local"}
                       </th>
                       <th className={styles.tableHeading}> </th>
                       {seqA.split("").map((item, i) => (

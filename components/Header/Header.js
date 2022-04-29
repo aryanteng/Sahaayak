@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 
 function Header() {
   const [drawer, setDrawer] = useState(false);
-
+  const [hover, setHover] = useState(false);
   useEffect(() => {
     if (typeof window !== undefined) {
       if (window.innerWidth < 800) {
@@ -16,8 +16,36 @@ function Header() {
     }
   }, []);
 
+  useEffect(() => {
+    if (hover) {
+      var cursor = document.getElementById("cursor");
+      var cursor2 = document.getElementById("cursor2");
+      var blackCursor = document.getElementById("black-cursor");
+      var blackCursor2 = document.getElementById("black-cursor2");
+      document.body.addEventListener("mousemove", function (e) {
+        (cursor.style.border = "2px solid #000 "),
+          (cursor2.style.backgroundColor = "#000");
+      });
+    } else {
+      var cursor = document.getElementById("cursor");
+      var cursor2 = document.getElementById("cursor2");
+      var blackCursor = document.getElementById("black-cursor");
+      var blackCursor2 = document.getElementById("black-cursor2");
+      document.body.addEventListener("mousemove", function (e) {
+        (cursor.style.border = "2px solid var(--theme)"),
+          (cursor2.style.backgroundColor = "var(--theme)");
+      });
+    }
+  }, [hover]);
+
   return (
-    <div className={styles.navbar}>
+    <div
+      className={styles.navbar}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => {
+        setHover(false);
+      }}
+    >
       <Head>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
