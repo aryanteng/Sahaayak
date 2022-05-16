@@ -10,8 +10,8 @@ import styles from "../styles/Global.module.css";
 export default function DNA_To_Protein() {
   const topic = "DNA To Protein ";
   const definition =
-    "Under the assumption that both input sequences a and  b stem from the same origin, a global alignment tries to identify matching parts and the changes needed to transfer one sequence into the other.";
-  const link = "https://vlab.amrita.edu/?sub=3&brch=274&sim=1431&cnt=1";
+    "In molecular biology, open reading frames (ORFs) are defined as spans of DNA sequence between the start and stop codons. Usually, this is considered within a studied region of a prokaryotic DNA sequence";
+  const link = "https://en.wikipedia.org/wiki/Open_reading_frame";
   const [seq, setSeq] = useState("");
   const [output, setOutput] = useState([]);
   const [error, setError] = useState("");
