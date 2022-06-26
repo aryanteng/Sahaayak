@@ -116,7 +116,7 @@ function Header() {
           content="upgrade-insecure-requests"
         ></meta>
       </Head>
-      <Link href="/">
+      <Link href="/" passHref={true}>
         <motion.h1
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
