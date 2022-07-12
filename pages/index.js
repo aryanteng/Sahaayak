@@ -10,7 +10,7 @@ export default function Home() {
   const list = [
     {
       heading: "Global Alignment",
-      desc: "Closely related sequences which are of same length are very much appropriate for global alignment. Here, the alignment is carried out from beginning till end of the sequence to find out the best possible alignment.The Needleman-Wunsch algorithm (A formula or set of steps to solve a problem) was developed by Saul B. Needleman and Christian D. <br/> <br/> Wunsch in 1970, which is a dynamic programming algorithm for sequence alignment. The dynamic programming solves the original problem by dividing the problem into smaller independent sub problems. These techniques are used in many different aspects of computer science. The algorithm explains global sequence alignment for aligning nucleotide or protein sequences.",
+      desc: "Closely related sequences which are of same length are very much appropriate for global alignment. Here, the alignment is carried out from beginning till end of the sequence to find out the best possible alignment.The Needleman-Wunsch algorithm (A formula or set of steps to solve a problem) was developed by Saul B. Needleman and Christian D. Wunsch in 1970, which is a dynamic programming algorithm for sequence alignment. The dynamic programming solves the original problem by dividing the problem into smaller independent sub problems. These techniques are used in many different aspects of computer science. The algorithm explains global sequence alignment for aligning nucleotide or protein sequences.",
       link: "/global",
     },
     {

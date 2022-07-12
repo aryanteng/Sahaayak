@@ -8,7 +8,7 @@ import Loading from "../components/Loading";
 import styles from "../styles/Global.module.css";
 
 export default function DNA_To_Protein() {
-  const topic = "DNA To Protein ";
+  const topic = "DNA To Protein";
   const definition =
     "In molecular biology, open reading frames (ORFs) are defined as spans of DNA sequence between the start and stop codons. Usually, this is considered within a studied region of a prokaryotic DNA sequence.";
   const link = "https://en.wikipedia.org/wiki/Open_reading_frame";
